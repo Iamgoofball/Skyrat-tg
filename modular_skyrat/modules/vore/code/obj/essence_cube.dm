@@ -32,7 +32,7 @@
 
 /obj/item/essence_cube/attack_self(mob/user)
 	var/error = span_warning("They can't be revived right now!")
-	if(loc && is_station_z(loc.z))
+	if(loc && is_station_level(loc.z))
 		to_chat(user, span_warning("You can't use that on the station! Take it to the Interlink or the Ghost Cafe!"))
 		return
 	if (!ismob(loc))
