@@ -170,7 +170,10 @@
 						if (!prey.dropItemToGround(item))
 							qdel(item)
 					if (prey.check_vore_toggle(LEAVE_ESSENCE_CUBE, VORE_MECHANICS_TOGGLES))
-						new /obj/item/essence_cube(src, prey)
+						var/obj/item/organ/corticalstack/revival_stack = new(get_turf(src))
+						revival_stack.ownerckey = prey.ckey
+						revival_stack.backup = prey.mind // this variable is named terribly on cortical stacks
+						revival_stack.active = TRUE
 					else
 						qdel(prey)
 					should_update = TRUE
