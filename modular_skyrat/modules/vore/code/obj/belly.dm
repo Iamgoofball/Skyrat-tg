@@ -170,10 +170,13 @@
 						if (!prey.dropItemToGround(item))
 							qdel(item)
 					if (prey.check_vore_toggle(LEAVE_ESSENCE_CUBE, VORE_MECHANICS_TOGGLES))
-						var/obj/item/organ/corticalstack/revival_stack = new(get_turf(src))
-						revival_stack.ownerckey = prey.ckey
-						revival_stack.backup = prey.mind // this variable is named terribly on cortical stacks
-						revival_stack.active = TRUE
+						if(is_station_level(z_level)) // If you're on station, you're participating in the round by being present, and thus do not get free aheal revives.
+							var/obj/item/organ/corticalstack/revival_stack = new(get_turf(src))
+							revival_stack.ownerckey = prey.ckey
+							revival_stack.backup = prey.mind // this variable is named terribly on cortical stacks
+							revival_stack.active = TRUE
+						else
+							new /obj/item/essence_cube(src, prey)
 					else
 						qdel(prey)
 					should_update = TRUE
