@@ -34,6 +34,7 @@
 	var/error = span_warning("They can't be revived right now!")
 	if(loc && is_station_z(loc.z))
 		to_chat(user, span_warning("You can't use that on the station! Take it to the Interlink or the Ghost Cafe!"))
+		return
 	if (!ismob(loc))
 		to_chat(user, span_warning("You can't use the essence cube without having it in your hand!"))
 		return
