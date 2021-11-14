@@ -175,6 +175,7 @@
 							revival_stack.ownerckey = prey.ckey
 							revival_stack.backup = prey.mind // this variable is named terribly on cortical stacks
 							revival_stack.active = TRUE
+							qdel(prey)
 						else
 							new /obj/item/essence_cube(src, prey)
 					else
