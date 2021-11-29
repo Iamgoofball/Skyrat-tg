@@ -1,0 +1,5 @@
+2021-11-29:
+  SkyratBot:
+  - bugfix: added parentheses to properly calculate days in round time
+  - code_imp: Moves most circuit component defines to their appropriate files
+  - bugfix: pais will no longer get hurt by the rod of asclepius
