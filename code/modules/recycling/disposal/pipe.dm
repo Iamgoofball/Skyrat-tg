@@ -18,7 +18,7 @@
 	var/obj/structure/disposalconstruct/stored
 	//SKYRAT EDIT: HURTSPOSALS
 	/// Whether a disposal pipe will hurt if a person changes direction. `FALSE` for hurting, `TRUE` to prevent making them hurt.
-	var/padded_corners = FALSE
+	var/padded_corners = TRUE
 	//SKYRAT EDIT: HURTSPOSALS
 
 
