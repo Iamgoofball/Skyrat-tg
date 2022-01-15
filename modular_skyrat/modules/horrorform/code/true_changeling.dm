@@ -138,17 +138,9 @@
 	name = "bone fragment"
 	icon = 'modular_skyrat/modules/horrorform/icons/bone_fragment.dmi'
 	icon_state = "bone_fragment"
-	damage = 8
-	ricochets_max = 3
-	ricochet_chance = 66
-	ricochet_decay_chance = 1
-	ricochet_decay_damage = 0.9
-	ricochet_auto_aim_angle = 10
-	ricochet_auto_aim_range = 2
-	ricochet_incidence_leeway = 0
-	embed_falloff_tile = -2
+	damage = 0
 	shrapnel_type = /obj/item/shrapnel/bone_fragment
-	embedding = list(embed_chance=55, fall_chance=2, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.7, pain_mult=3, jostle_pain_mult=3, rip_time=15)
+	embedding = list(embed_chance=0, fall_chance=2, jostle_chance=7, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.7, pain_mult=3, jostle_pain_mult=3, rip_time=15)
 
 /obj/item/shrapnel/bone_fragment
 	name = "bone fragment"
