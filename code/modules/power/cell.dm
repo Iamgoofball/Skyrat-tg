@@ -46,8 +46,10 @@
 	if (override_maxcharge)
 		maxcharge = override_maxcharge
 	charge = maxcharge
+	/* SKYRAT EDIT REMOVAL
 	if(ratingdesc)
-		desc += " This one has a rating of [DisplayEnergy(maxcharge)], and you should not swallow it."
+		desc += " This one has a rating of [display_energy(maxcharge)], and you should not swallow it."
+	*/ // SKYRAT EDIT END
 	update_appearance()
 
 /obj/item/stock_parts/cell/create_reagents(max_vol, flags)
@@ -67,7 +69,7 @@
 		. += mutable_appearance('icons/obj/power.dmi', "grown_wires")
 	if(charge < 0.01)
 		return
-	. += mutable_appearance('modular_skyrat/modules/aesthetics/cells/cell.dmi', "cell-o[((charge / maxcharge) >= 0.995) ? 2 : 1]") //SKYRAT EDIT CHANGE
+	. += mutable_appearance(charge_overlay_icon, "cell-o[((charge / maxcharge) >= 0.995) ? 2 : 1]") //SKYRAT EDIT CHANGE
 
 /obj/item/stock_parts/cell/proc/percent() // return % charge of cell
 	return 100*charge/maxcharge
@@ -97,8 +99,16 @@
 
 /obj/item/stock_parts/cell/examine(mob/user)
 	. = ..()
+	// SKYRAT EDIT ADDITION
+	if(ratingdesc && !microfusion_readout)
+		. += "This one has a rating of [display_energy(maxcharge)], and you should not swallow it."
+	// SKYRAT EDIT END
 	if(rigged)
 		. += span_danger("This power cell seems to be faulty!")
+	// SKYRAT EDIT ADDITION
+	else if(microfusion_readout)
+		. += "The charge meter reads [charge]/[maxcharge] MF."
+	// SKYRAT EDIT END
 	else
 		. += "The charge meter reads [round(src.percent() )]%."
 
@@ -204,7 +214,7 @@
 	return rating * maxcharge
 
 /* Cell variants*/
-/obj/item/stock_parts/cell/empty/Initialize()
+/obj/item/stock_parts/cell/empty/Initialize(mapload)
 	. = ..()
 	charge = 0
 	update_appearance()
@@ -215,7 +225,7 @@
 	maxcharge = 500
 	custom_materials = list(/datum/material/glass=40)
 
-/obj/item/stock_parts/cell/crap/empty/Initialize()
+/obj/item/stock_parts/cell/crap/empty/Initialize(mapload)
 	. = ..()
 	charge = 0
 	update_appearance()
@@ -237,7 +247,7 @@
 	maxcharge = 600 //600 max charge / 100 charge per shot = six shots
 	custom_materials = list(/datum/material/glass=40)
 
-/obj/item/stock_parts/cell/secborg/empty/Initialize()
+/obj/item/stock_parts/cell/secborg/empty/Initialize(mapload)
 	. = ..()
 	charge = 0
 	update_appearance()
@@ -278,7 +288,7 @@
 	chargerate = 2250
 	rating = 2
 
-/obj/item/stock_parts/cell/high/empty/Initialize()
+/obj/item/stock_parts/cell/high/empty/Initialize(mapload)
 	. = ..()
 	charge = 0
 	update_appearance()
@@ -291,7 +301,7 @@
 	chargerate = 2000
 	rating = 3
 
-/obj/item/stock_parts/cell/super/empty/Initialize()
+/obj/item/stock_parts/cell/super/empty/Initialize(mapload)
 	. = ..()
 	charge = 0
 	update_appearance()
@@ -304,7 +314,7 @@
 	chargerate = 3000
 	rating = 4
 
-/obj/item/stock_parts/cell/hyper/empty/Initialize()
+/obj/item/stock_parts/cell/hyper/empty/Initialize(mapload)
 	. = ..()
 	charge = 0
 	update_appearance()
@@ -318,7 +328,7 @@
 	chargerate = 4000
 	rating = 5
 
-/obj/item/stock_parts/cell/bluespace/empty/Initialize()
+/obj/item/stock_parts/cell/bluespace/empty/Initialize(mapload)
 	. = ..()
 	charge = 0
 	update_appearance()
@@ -367,13 +377,22 @@
 	. = ..()
 	AddElement(/datum/element/empprotection, EMP_PROTECT_SELF)
 
-/obj/item/stock_parts/cell/emproof/empty/Initialize()
+/obj/item/stock_parts/cell/emproof/empty/Initialize(mapload)
 	. = ..()
 	charge = 0
 	update_appearance()
 
 /obj/item/stock_parts/cell/emproof/corrupt()
 	return
+
+/obj/item/stock_parts/cell/emproof/slime
+	name = "EMP-proof slime core"
+	desc = "A yellow slime core infused with plasma. Its organic nature makes it immune to EMPs."
+	icon = 'icons/mob/slimes.dmi'
+	icon_state = "yellow slime extract"
+	custom_materials = null
+	maxcharge = 5000
+	rating = 5
 
 /obj/item/stock_parts/cell/beam_rifle
 	name = "beam rifle capacitor"
@@ -397,7 +416,7 @@
 	custom_materials = list(/datum/material/glass = 20)
 	w_class = WEIGHT_CLASS_TINY
 
-/obj/item/stock_parts/cell/emergency_light/Initialize()
+/obj/item/stock_parts/cell/emergency_light/Initialize(mapload)
 	. = ..()
 	var/area/A = get_area(src)
 	if(!A.lightswitch || !A.light_power)
@@ -413,7 +432,7 @@
 	grind_results = null
 	rating = 5
 
-/obj/item/stock_parts/cell/crystal_cell/Initialize()
+/obj/item/stock_parts/cell/crystal_cell/Initialize(mapload)
 	. = ..()
 	charge = 50000
 

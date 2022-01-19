@@ -3,7 +3,7 @@
 /datum/species/zombie
 	// 1spooky
 	name = "High-Functioning Zombie"
-	id = "zombie"
+	id = SPECIES_ZOMBIE_HALLOWEEN
 	say_mod = "moans"
 	sexes = 0
 	meat = /obj/item/food/meat/slab/human/mutant/zombie
@@ -43,8 +43,8 @@
 
 /datum/species/zombie/infectious
 	name = "Infectious Zombie"
-	id = "memezombies"
-	limbs_id = "zombie"
+	id = SPECIES_ZOMBIE
+	limbs_id = SPECIES_ZOMBIE_HALLOWEEN
 	mutanthands = /obj/item/zombie_hand
 	armor = 20 // 120 damage to KO a zombie, which kills it
 	speedmod = 1.6
@@ -65,7 +65,7 @@
 /datum/species/zombie/infectious/spec_stun(mob/living/carbon/human/H,amount)
 	. = min(20, amount)
 
-/datum/species/zombie/infectious/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, spread_damage = FALSE, forced = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = NONE)
+/datum/species/zombie/infectious/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, spread_damage = FALSE, forced = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = NONE, attack_direction = null)
 	. = ..()
 	if(.)
 		COOLDOWN_START(src, regen_cooldown, REGENERATION_DELAY)
@@ -112,8 +112,8 @@
 // Your skin falls off
 /datum/species/krokodil_addict
 	name = "Human"
-	id = "goofzombies"
-	limbs_id = "zombie" //They look like zombies
+	id = SPECIES_ADDICT
+	limbs_id = SPECIES_ZOMBIE_HALLOWEEN //They look like zombies
 	sexes = 0
 	meat = /obj/item/food/meat/slab/human/mutant/zombie
 	mutanttongue = /obj/item/organ/tongue/zombie
