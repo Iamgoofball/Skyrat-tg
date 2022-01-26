@@ -203,7 +203,6 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 		/obj/item/rsf = 5,
 		/obj/item/rupee = 5,
 		/obj/item/sord = 5,
-		/obj/item/stack/telecrystal = 5,
 		/obj/item/storage/belt/utility/syndicate = 5,
 		/obj/item/storage/box/firecrackers = 10,
 		/obj/item/storage/box/fireworks/dangerous = 5,
