@@ -420,13 +420,15 @@ GLOBAL_LIST_INIT(call911_do_and_do_not, list(
 /datum/outfit/request_911/condom_destroyer
 	name = "911 Response: Armed S.W.A.T. Officer"
 	back = /obj/item/storage/backpack/duffelbag/cops
-	uniform = /obj/item/clothing/under/rank/security/officer/beatcop
+	uniform = /obj/item/clothing/under/rank/security/officer/solfed
 	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/radio/headset/headset_sec/alt
-	head = /obj/item/clothing/head/helmet/riot
-	belt = /obj/item/gun/energy/disabler
-	suit = /obj/item/clothing/suit/armor/riot
+	head = /obj/item/clothing/head/helmet/solfed
+	belt = /obj/item/storage/belt/security/solfed
+	r_hand = /obj/item/gun/energy/disabler
+	suit = /obj/item/clothing/suit/armor/vest/solfed
+	gloves = /obj/item/clothing/gloves/solfed
 	r_pocket = /obj/item/lighter
 	l_pocket = /obj/item/restraints/handcuffs
 	id = /obj/item/card/id/advanced/solfed
@@ -439,6 +441,48 @@ GLOBAL_LIST_INIT(call911_do_and_do_not, list(
 		/obj/item/beamout_tool = 1)
 
 	id_trim = /datum/id_trim/solfed
+
+/datum/outfit/request_911/condom_destroyer/shield
+	name = "911 Response: S.W.A.T. Shield"
+	l_hand = /obj/item/shield/riot/solfed
+
+/datum/outfit/request_911/condom_destroyer/medic
+	name = "911 Response: S.W.A.T. Medic"
+	uniform = /obj/item/clothing/under/rank/security/officer/solfed/medic
+	head = /obj/item/clothing/head/helmet/solfed/medic
+	belt = /obj/item/storage/belt/security/solfed/medic
+	suit = /obj/item/clothing/suit/armor/vest/solfed/medic
+	gloves = /obj/item/clothing/gloves/solfed/medic
+	r_hand = /obj/item/storage/firstaid/advanced
+
+/datum/outfit/request_911/condom_destroyer/taser
+	name = "911 Response: S.W.A.T. Taser"
+	uniform = /obj/item/clothing/under/rank/security/officer/solfed/taser
+	head = /obj/item/clothing/head/helmet/solfed/taser
+	suit = /obj/item/clothing/suit/armor/vest/solfed/taser
+	r_hand = /obj/item/gun/energy/taser
+
+/datum/outfit/request_911/condom_destroyer/cloaker
+	name = "911 Response: S.W.A.T. Cloaker"
+	uniform = /obj/item/clothing/under/rank/security/officer/solfed/cloaker
+	head = /obj/item/clothing/head/helmet/solfed/cloaker
+	suit = /obj/item/clothing/suit/armor/vest/solfed/cloaker
+	gloves = /obj/item/clothing/gloves/tackler/rocket
+	r_hand = /obj/item/melee/baton
+
+/datum/outfit/request_911/condom_destroyer/dozer
+	name = "911 Response: S.W.A.T. Bulldozer"
+	uniform = /obj/item/clothing/under/rank/security/officer/solfed/cloaker
+	head = /obj/item/clothing/head/helmet/solfed/cloaker
+	suit = /obj/item/clothing/suit/armor/vest/solfed/cloaker
+	gloves = /obj/item/clothing/gloves/tackler/rocket
+	l_hand = /obj/item/gun/ballistic/automatic/l6_saw
+	backpack_contents = list(/obj/item/storage/box/survival = 1,
+		/obj/item/storage/box/handcuffs = 1,
+		/obj/item/melee/baton/security/loaded = 1,
+		/obj/item/ammo_box/magazine/mm712x82 = 2,
+		/obj/item/solfed_reporter/treason_reporter = 1,
+		/obj/item/beamout_tool = 1)
 
 /datum/antagonist/ert/request_911/treason_destroyer
 	name = "Sol Federation Military"
@@ -513,6 +557,8 @@ GLOBAL_LIST_INIT(call911_do_and_do_not, list(
 	var/jobban_to_check = ROLE_DEATHSQUAD
 	/// What announcement message should be displayed if the vote succeeds?
 	var/announcement_message = "Example announcement message"
+	/// What outfits should be equipped to the ghosts before going to the fallback type?
+	var/list/types_to_summon = list()
 
 /obj/item/solfed_reporter/proc/pre_checks(mob/user)
 	if(GLOB.solfed_responder_info[type_of_callers][SOLFED_AMT] == 0)
@@ -569,9 +615,13 @@ GLOBAL_LIST_INIT(call911_do_and_do_not, list(
 					var/mob/living/carbon/human/cop = new(spawn_loc)
 					chosen_candidate.client.prefs.safe_transfer_prefs_to(cop, is_antag = TRUE)
 					cop.key = chosen_candidate.key
-
+					var/type_to_use = null
+					if(length(list_types_to_summon))
+						type_to_use = pop(list_types_to_summon)
+					else
+						type_to_use = type_to_summon
 					//Give antag datum
-					var/datum/antagonist/ert/request_911/ert_antag = new type_to_summon
+					var/datum/antagonist/ert/request_911/ert_antag = new type_to_use
 
 					cop.mind.add_antag_datum(ert_antag)
 					cop.mind.set_assigned_role(SSjob.GetJobType(ert_antag.ert_job_path))
@@ -604,6 +654,11 @@ GLOBAL_LIST_INIT(call911_do_and_do_not, list(
 	announcement_message = "Hello, crewmembers. Our emergency services have requested S.W.A.T. backup, either for assistance doing their job due to crew \
 		impediment, or due to a fraudulent 911 call. We have billed the station $20,000 for this, to cover the expenses of flying a second emergency response to \
 		your station. Please comply with all requests by said S.W.A.T. members."
+	types_to_summon = list(/datum/outfit/request_911/condom_destroyer/dozer,
+							/datum/outfit/request_911/condom_destroyer/medic,
+							/datum/outfit/request_911/condom_destroyer/taser,
+							/datum/outfit/request_911/condom_destroyer/cloaker,
+							/datum/outfit/request_911/condom_destroyer/shield)
 
 /obj/item/solfed_reporter/swat_caller/questions(mob/user)
 	var/question = "Does the situation require additional S.W.A.T. backup, involve the station impeding you from doing your job, \
