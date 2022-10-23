@@ -1,0 +1,133 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/space)
+"c" = (
+/obj/structure/closet/secure_closet/security/cargo,
+/obj/machinery/airalarm/directional/north,
+/obj/effect/turf_decal/bot_white,
+/turf/open/floor/iron,
+/area/space)
+"d" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger{
+	pixel_y = 4
+	},
+/obj/item/radio/off{
+	pixel_x = -11;
+	pixel_y = -3
+	},
+/turf/open/floor/iron,
+/area/space)
+"k" = (
+/obj/machinery/computer/security/mining{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/obj/item/radio/intercom/directional/west,
+/turf/open/floor/iron,
+/area/space)
+"t" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/landmark/start/customs_agent,
+/turf/open/floor/iron,
+/area/space)
+"w" = (
+/obj/machinery/camera/directional/south{
+	c_tag = "Security Post - Cargo"
+	},
+/obj/structure/filingcabinet,
+/obj/effect/turf_decal/bot_white,
+/turf/open/floor/iron,
+/area/space)
+"A" = (
+/obj/structure/closet/secure_closet/security/cargo,
+/obj/effect/turf_decal/bot_white,
+/turf/open/floor/iron,
+/area/space)
+"I" = (
+/obj/structure/chair/office,
+/obj/machinery/requests_console/directional/north{
+	department = "Security";
+	departmentType = 3;
+	name = "Security Requests Console"
+	},
+/obj/effect/landmark/start/customs_agent,
+/turf/open/floor/iron,
+/area/space)
+"K" = (
+/obj/structure/reagent_dispensers/wall/peppertank/directional/east,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron,
+/area/space)
+"O" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/obj/effect/landmark/start/customs_agent,
+/turf/open/floor/iron,
+/area/space)
+"R" = (
+/obj/structure/cable,
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 1;
+	pixel_y = 9
+	},
+/obj/item/pen{
+	pixel_x = 1;
+	pixel_y = 9
+	},
+/turf/open/floor/iron,
+/area/space)
+"S" = (
+/obj/structure/cable,
+/obj/machinery/power/apc/auto_name/directional/east,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/landmark/start/customs_agent,
+/turf/open/floor/iron,
+/area/space)
+"V" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/airlock/access/all/supply/customs,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Customs Agent Office"
+	},
+/turf/open/floor/iron,
+/area/space)
+"W" = (
+/turf/closed/wall,
+/area/space)
+
+(1,1,1) = {"
+k
+R
+a
+a
+"}
+(2,1,1) = {"
+I
+O
+d
+a
+"}
+(3,1,1) = {"
+A
+t
+w
+W
+"}
+(4,1,1) = {"
+c
+S
+K
+V
+"}

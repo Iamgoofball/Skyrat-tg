@@ -67,6 +67,38 @@ required_map = "MetaStation.dmm"
 coordinates = [56, 119, 1]
 trait_name = "Station"
 
+# Metastation Orderly Office
+[templates.metastation_orderly]
+map_files = ["metastation_orderly.dmm"]
+directory = "_maps/skyrat/automapper/templates/metastation/"
+required_map = "MetaStation.dmm"
+coordinates = [92, 107, 1]
+trait_name = "Station"
+
+# Metastation Science Guard Post
+[templates.metastation_scienceguard]
+map_files = ["metastation_scienceguard.dmm"]
+directory = "_maps/skyrat/automapper/templates/metastation/"
+required_map = "MetaStation.dmm"
+coordinates = [123, 96, 1]
+trait_name = "Station"
+
+# Metastation Engineering Guard Office
+[templates.metastation_eng_guard]
+map_files = ["metastation_eng_guard.dmm"]
+directory = "_maps/skyrat/automapper/templates/metastation/"
+required_map = "MetaStation.dmm"
+coordinates = [164, 131, 1]
+trait_name = "Station"
+
+# Metastation Customs Agent Office
+[templates.metastation_customs_agent]
+map_files = ["metastation_customs_agent.dmm"]
+directory = "_maps/skyrat/automapper/templates/metastation/"
+required_map = "MetaStation.dmm"
+coordinates = [72, 155, 1]
+trait_name = "Station"
+
 # DELTASTATION MAP EDITS
 # Deltastation Arrivals
 [templates.deltastation_arrivals]
