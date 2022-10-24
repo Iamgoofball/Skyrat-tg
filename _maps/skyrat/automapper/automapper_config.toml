@@ -140,6 +140,30 @@ required_map = "DeltaStation2.dmm"
 coordinates = [123, 143, 1]
 trait_name = "Station"
 
+# Deltastation Science Guard/Orderly Office
+[templates.deltastation_orderly_sciguard]
+map_files = ["deltastation_orderly_sciguard.dmm"]
+directory = "_maps/skyrat/automapper/templates/deltastation/"
+required_map = "DeltaStation2.dmm"
+coordinates = [141, 82, 1]
+trait_name = "Station"
+
+# Deltastation Engineering Guard Outpost
+[templates.deltastation_eng_guard]
+map_files = ["deltastation_eng_guard.dmm"]
+directory = "_maps/skyrat/automapper/templates/deltastation/"
+required_map = "DeltaStation2.dmm"
+coordinates = [103, 128, 1]
+trait_name = "Station"
+
+# Deltastation Customs Agent Outpost
+[templates.deltastation_customs_agent]
+map_files = ["deltastation_customs_agent.dmm"]
+directory = "_maps/skyrat/automapper/templates/deltastation/"
+required_map = "DeltaStation2.dmm"
+coordinates = [162, 163, 1]
+trait_name = "Station"
+
 # ICEBOX MAP EDITS
 # Icebox Arrivals
 [templates.icebox_arrivals]
@@ -195,6 +219,38 @@ map_files = ["icebox_hop_maint.dmm"]
 directory = "_maps/skyrat/automapper/templates/icebox/"
 required_map = "IceBoxStation.dmm"
 coordinates = [98, 123, 3]
+trait_name = "Station"
+
+# Icebox Customs Agent
+[templates.icebox_customs_agent]
+map_files = ["icebox_customs_agent.dmm"]
+directory = "_maps/skyrat/automapper/templates/icebox/"
+required_map = "IceBoxStation.dmm"
+coordinates = [90, 111, 3]
+trait_name = "Station"
+
+# Icebox Orderly Office
+[templates.icebox_orderly]
+map_files = ["icebox_orderly.dmm"]
+directory = "_maps/skyrat/automapper/templates/icebox/"
+required_map = "IceBoxStation.dmm"
+coordinates = [151, 122, 3]
+trait_name = "Station"
+
+# Icebox Science Guard Post
+[templates.icebox_sci_guard]
+map_files = ["icebox_sci_guard.dmm"]
+directory = "_maps/skyrat/automapper/templates/icebox/"
+required_map = "IceBoxStation.dmm"
+coordinates = [173, 111, 3]
+trait_name = "Station"
+
+# Icebox Engineering Guard Post
+[templates.icebox_eng_guard]
+map_files = ["icebox_eng_guard.dmm"]
+directory = "_maps/skyrat/automapper/templates/icebox/"
+required_map = "IceBoxStation.dmm"
+coordinates = [116, 93, 3]
 trait_name = "Station"
 
 # KILOSTATION MAP EDITS
