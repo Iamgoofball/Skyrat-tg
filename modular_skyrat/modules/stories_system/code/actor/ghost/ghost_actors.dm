@@ -117,7 +117,7 @@
 
 /datum/story_actor/ghost/centcom_inspector/nri_revisor/send_them_in(mob/living/carbon/human/to_send_human)
 	to_send_human.client?.prefs?.safe_transfer_prefs_to(to_send_human)
-	to_send_human.equipOutfit(actor_outfits)
+	. = ..()
 	var/area/station/command/bridge/bridge_area = GLOB.areas_by_type[/area/station/command/bridge]
 	var/list/bridge_tiles = list()
 	for(var/turf/open/floor/floor_tile in bridge_area)
