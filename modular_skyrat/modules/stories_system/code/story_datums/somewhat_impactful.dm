@@ -68,6 +68,26 @@
 				Debtor (1)
 */
 
+/*
+	NRI Investors Revision
+		Plot Summary:
+			NRI External Relationships Collegium is widely known for sending in their inspections to ensure the cooperative stations' compliance with the regulations
+			on the neutral stations. Most notably, *thoroughly* examining the medical and research departments' performance they've put so much money and resources in
+			just to outbid the SolFed somewhere.
+		Actors:
+			Ghost:
+				NRI Revisor (1)
+*/
+/datum/story_type/somewhat_impactful/centcom_inspector/nri
+	name = "NRI Investors Revision"
+	desc = "NRI ERC has come to make sure the money they've invested in research is the money well spent."
+	actor_datums_to_make = list(
+		/datum/story_actor/ghost/centcom_inspector/nri_revisor = 1,
+	)
+
+/datum/story_type/somewhat_impactful/centcom_inspector/nri/inform_station()
+	print_command_report("Greetings, Nanotrasen Research Station, this is the regional collegiate councilor speaking. To ensure that our invested grants were spent well, we are dispatching a collegial revisor to perform a revision of your departments, accordingly.", announce = FALSE)
+
 /datum/story_type/somewhat_impactful/mob_money
 	name = "Mob Money"
 	desc = "Some crewman's gotten themselves involved in organized crime, and now owes 20k to some mafiosos."
@@ -82,20 +102,6 @@
 	poor_sod = null
 	return ..()
 
-<<<<<<< HEAD
-/datum/story_type/somewhat_impactful/paradigm_shift
-	name = "Paradigm Shift"
-	desc = "Nanotrasen has seen fit to send middle management to every department to help efficiently operationalize our strategy to invest in world class technology \
-	and leverage our core competencies in order to holistically administrate exceptional synergy."
-	actor_datums_to_make = list(
-		/datum/story_actor/ghost/spawn_in_arrivals/middle_management/cargo = 1,
-		/datum/story_actor/ghost/spawn_in_arrivals/middle_management/security = 1,
-		/datum/story_actor/ghost/spawn_in_arrivals/middle_management/science = 1,
-		/datum/story_actor/ghost/spawn_in_arrivals/middle_management/service = 1,
-		/datum/story_actor/ghost/spawn_in_arrivals/middle_management/engineering = 1,
-		/datum/story_actor/ghost/spawn_in_arrivals/middle_management/medbay = 1,
-	)
-=======
 /*
 	NRI R&R
 		Plot Summary:
@@ -113,4 +119,3 @@
 		/datum/story_actor/ghost/spawn_in_arrivals/nri_shore_leave = 3,
 	)
 	maximum_execute_times = 1
->>>>>>> e3bef5a336e7f5d7c1682f18c0878d79e8acbf4c

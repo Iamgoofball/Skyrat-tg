@@ -26,3 +26,9 @@
 
 /obj/item/clothing/under/costume/nri/engineer
 	icon_state = "nri_engineer"
+
+/obj/item/clothing/under/costume/nri/revisor
+	name = "collegial servant uniform"
+	desc = "A white shirt and a pair of black slacks - THE uniform to fight the endless waves of unending paperwork, fines and grants."
+	icon_state = "nri_revisor"
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, FIRE = 30, ACID = 30)

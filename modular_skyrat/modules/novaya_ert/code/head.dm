@@ -19,6 +19,33 @@
 	desc = "Za rodinu!!"
 	armor = list(MELEE = 40, BULLET = 35, LASER = 30, ENERGY = 40, BOMB = 25, BIO = 0, FIRE = 20, ACID = 50, WOUND = 20)
 
+/obj/item/clothing/head/hats/nri_revisor
+	name = "collegial servant hat"
+	desc = "The radio is as decorative as the hat is. Alt-click to adjust."
+	icon = 'modular_skyrat/master_files/icons/obj/clothing/hats.dmi'
+	worn_icon = 'modular_skyrat/master_files/icons/mob/clothing/head.dmi'
+	icon_state = "nri_revisor"
+	inhand_icon_state = "that"
+	flags_inv = 0
+	strip_delay = 60
+	/// What position the helmet is in, TRUE = DOWN, FALSE = UP
+	var/helmet_position = TRUE
+
+/obj/item/clothing/head/hats/nri_revisor/AltClick(mob/user)
+	. = ..()
+	helmet_position = !helmet_position
+	to_chat(user, span_notice("You flip the nasal breathing apparatus [src] [helmet_position ? "down" : "up"]."))
+	update_appearance()
+
+/obj/item/clothing/head/hats/nri_revisor/update_icon_state()
+	. = ..()
+	var/state = "[initial(icon_state)]"
+	if(helmet_position)
+		state += "-down"
+	else
+		state += "-up"
+	icon_state = state
+
 /obj/item/clothing/head/helmet/nri_heavy
 	name = "\improper Cordun-M helmet"
 	desc = "A heavy Russian combat helmet with a strong ballistic visor. Alt+click to adjust."

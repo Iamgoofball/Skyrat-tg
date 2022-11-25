@@ -69,6 +69,26 @@
 	)
 	steal_item = "the R&D server HDD"
 
+/datum/outfit/nri_revisor
+	name = "NRI Revisor"
+	ears = /obj/item/radio/headset/headset_cent
+	uniform = /obj/item/clothing/under/costume/nri/revisor
+	suit = /obj/item/clothing/suit/toggle/nri_revisor
+	shoes = /obj/item/clothing/shoes/laceup
+	glasses = /obj/item/clothing/glasses/regular
+	head = /obj/item/clothing/head/hats/nri_revisor
+	id = /obj/item/card/id/advanced/centcom
+	id_trim = /datum/id_trim/centcom/centcom_inspector/nri
+	l_hand = /obj/item/clipboard
+	back = /obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(
+		/obj/item/paper = 1,
+		/obj/item/pen/fountain = 1,
+		/obj/item/modular_computer/tablet/pda/centcom = 1,
+		/obj/item/stack/spacecash/c10000 = 5,
+		/obj/item/storage/box/nri_rations
+	)
+	l_pocket = /obj/item/paper/fluff/nri_diplomat
 
 /datum/outfit/mafioso
 	name = "Mafioso"
@@ -166,7 +186,6 @@
 /datum/outfit/medical_student
 	name = "Medical Student"
 
-<<<<<<< HEAD
 
 /datum/outfit/construction_worker
 	name = "Construction Worker"
@@ -274,7 +293,7 @@
 
 /datum/outfit/middle_management/science
 	id_trim = /datum/id_trim/centcom/centcom_inspector/middle_management/science
-=======
+
 	id = /obj/item/card/id/passport
 	id_trim = /datum/id_trim/job/assistant/med_student
 	uniform = /obj/item/clothing/under/rank/medical/scrubs/green
@@ -317,4 +336,3 @@
 	nri_human.set_drunk_effect(45) //This isn't time; it's how drunk they are
 	nri_human.remove_all_languages()
 	nri_human.grant_language(/datum/language/panslavic)
->>>>>>> e3bef5a336e7f5d7c1682f18c0878d79e8acbf4c

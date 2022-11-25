@@ -167,3 +167,13 @@
 	name = "\improper VOSKHOD-IN powered combat armor"
 	desc = "A hybrid set of space-resistant armor built on a modified Nanotrasen heavy-duty engineering undersuit, polyurea coated lead-lined light plasteel plates hinder mobility as little as possible and offer additional radiation protection while the onboard life support system aids the user in combat. The power cell is what makes the armor work without hassle, a sticker in the power supply unit warns anyone reading to responsibly manage battery levels."
 	icon_state = "nri_engineer"
+
+/obj/item/clothing/suit/toggle/nri_revisor
+	name = "collegial servant jacket"
+	desc = "An incredibly formal, incredibly thin jacket laced with gold trimming, used by the collegial servants of the NRI whenever yet another station needs to be inspected."
+	icon = 'modular_skyrat/master_files/icons/obj/clothing/suits.dmi'
+	worn_icon = 'modular_skyrat/master_files/icons/mob/clothing/suit.dmi'
+	worn_icon_digi = 'modular_skyrat/master_files/icons/mob/clothing/suit_digi.dmi'
+	icon_state = "nri_revisor"
+	inhand_icon_state = "hostrench"
+	strip_delay = 50

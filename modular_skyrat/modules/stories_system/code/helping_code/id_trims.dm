@@ -12,8 +12,6 @@
 /datum/id_trim/job/assistant/government_official
 	assignment = "Government Official"
 
-<<<<<<< HEAD
-
 /datum/id_trim/centcom/centcom_inspector/middle_management
 	assignment = JOB_CENTCOM_MIDDLE_MANAGEMENT
 
@@ -70,7 +68,12 @@
 		REGION_ACCESS_COMMAND,
 		REGION_ACCESS_ENGINEERING,
 	))
-=======
+
+/datum/id_trim/centcom/centcom_inspector/nri
+	assignment = "NRI Collegial Revisor"
+	trim_icon = 'modular_skyrat/master_files/icons/obj/card.dmi'
+	trim_state = "trim_nri_commander"
+	sechud_icon_state = "hud_nri_commander"
+
 /datum/id_trim/job/assistant/med_student
 	assignment = "Medical Student"
->>>>>>> e3bef5a336e7f5d7c1682f18c0878d79e8acbf4c
