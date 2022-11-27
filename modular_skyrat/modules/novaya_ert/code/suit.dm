@@ -176,4 +176,4 @@
 	worn_icon_digi = 'modular_skyrat/master_files/icons/mob/clothing/suit_digi.dmi'
 	icon_state = "nri_revisor"
 	inhand_icon_state = "hostrench"
-	strip_delay = 50
+	strip_delay = 5 SECONDS

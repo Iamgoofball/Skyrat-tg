@@ -27,7 +27,7 @@
 	icon_state = "nri_revisor"
 	inhand_icon_state = "that"
 	flags_inv = 0
-	strip_delay = 60
+	strip_delay = 6 SECONDS
 	/// What position the helmet is in, TRUE = DOWN, FALSE = UP
 	var/helmet_position = TRUE
 
