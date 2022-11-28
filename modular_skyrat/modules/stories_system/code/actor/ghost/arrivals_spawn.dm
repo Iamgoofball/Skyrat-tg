@@ -111,7 +111,6 @@
 	actor_goal = "Get drunk with the boys. Have some good fucking food at the kitchen. Be rowdy and merry. Get into fights, be a nuisance, be obnoxious to the station. \
 	Avoid getting thrown in the brig so that your commanding officer doesn't have to bail you out."
 
-<<<<<<< HEAD
 /datum/story_actor/ghost/spawn_in_arrivals/small_business_owner
 	name = "Small Business Owner"
 	actor_outfits = list(

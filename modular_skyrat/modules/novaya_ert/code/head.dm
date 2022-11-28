@@ -27,28 +27,6 @@
 	icon_state = "nri_revisor"
 	inhand_icon_state = "that"
 	flags_inv = 0
-	strip_delay = 6 SECONDS
-	/// What position the helmet is in, TRUE = DOWN, FALSE = UP
-	var/helmet_position = TRUE
-
-/obj/item/clothing/head/hats/nri_revisor/examine()
-	. = ..()
-	. += " Alt-click to adjust its purely decorative nasal breathing tube."
-
-/obj/item/clothing/head/hats/nri_revisor/AltClick(mob/user)
-	. = ..()
-	helmet_position = !helmet_position
-	balloon_alert(user, "tube flipped [helmet_position ? "down" : "up"]")
-	update_appearance()
-
-/obj/item/clothing/head/hats/nri_revisor/update_icon_state()
-	. = ..()
-	var/state = "[initial(icon_state)]"
-	if(helmet_position)
-		state += "-down"
-	else
-		state += "-up"
-	icon_state = state
 
 /obj/item/clothing/head/helmet/nri_heavy
 	name = "\improper Cordun-M helmet"
