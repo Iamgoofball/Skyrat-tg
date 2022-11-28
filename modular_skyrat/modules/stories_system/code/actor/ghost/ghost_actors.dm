@@ -113,7 +113,7 @@
 		/datum/outfit/nri_revisor,
 	)
 	actor_info = "You are a Novaya Rossiyskaya Imperiya External Relationships Collegium сollegiate registrar on a medical and research revision of the station. Inspect the station's advancements in biological and genetical fields, fumble the paperwork, and denounce any criticism of the NRI's overly intrusive inspection practices."
-	actor_goal = "Inspect the station, <b>thoroughly</b>; make a report, and send it to NRI ERC when done, and decide if you should give away the funds you are starting with."
+	actor_goal = "Inspect the station, -thoroughly-; make a report, and send it to NRI ERC when done, and decide if you should give away the funds you are starting with."
 
 /datum/story_actor/ghost/centcom_inspector/nri_revisor/send_them_in(mob/living/carbon/human/to_send_human)
 	to_send_human.client?.prefs?.safe_transfer_prefs_to(to_send_human)
