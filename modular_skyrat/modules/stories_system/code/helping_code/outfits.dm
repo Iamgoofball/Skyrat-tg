@@ -79,14 +79,16 @@
 	head = /obj/item/clothing/head/hats/nri_revisor
 	id = /obj/item/card/id/advanced/centcom
 	id_trim = /datum/id_trim/centcom/centcom_inspector/nri
-	l_hand = /obj/item/clipboard
+	belt = /obj/item/clipboard
 	back = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(
-		/obj/item/paper = 1,
-		/obj/item/pen/fountain = 1,
-		/obj/item/modular_computer/tablet/pda/centcom = 1,
+		/obj/item/storage/box/nri_survival_pack,
+		/obj/item/paper,
+		/obj/item/pen/fountain,
+		/obj/item/modular_computer/tablet/pda/centcom,
 		/obj/item/stack/spacecash/c10000 = 5,
-		/obj/item/storage/box/nri_rations
+		/obj/item/clothing/under/costume/nri/revisor,
+
 	)
 	l_pocket = /obj/item/paper/fluff/nri_diplomat
 

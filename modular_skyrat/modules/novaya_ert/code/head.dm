@@ -21,7 +21,7 @@
 
 /obj/item/clothing/head/hats/nri_revisor
 	name = "collegial servant hat"
-	desc = "The radio is as decorative as the hat is. Alt-click to adjust."
+	desc = "The radio is as decorative as the hat is."
 	icon = 'modular_skyrat/master_files/icons/obj/clothing/hats.dmi'
 	worn_icon = 'modular_skyrat/master_files/icons/mob/clothing/head.dmi'
 	icon_state = "nri_revisor"
@@ -31,10 +31,14 @@
 	/// What position the helmet is in, TRUE = DOWN, FALSE = UP
 	var/helmet_position = TRUE
 
+/obj/item/clothing/head/hats/nri_revisor/examine()
+	. = ..()
+	. += " Alt-click to adjust its purely decorative nasal breathing tube."
+
 /obj/item/clothing/head/hats/nri_revisor/AltClick(mob/user)
 	. = ..()
 	helmet_position = !helmet_position
-	to_chat(user, span_notice("You flip the nasal breathing apparatus [src] [helmet_position ? "down" : "up"]."))
+	balloon_alert(user, "tube flipped [helmet_position ? "down" : "up"]")
 	update_appearance()
 
 /obj/item/clothing/head/hats/nri_revisor/update_icon_state()
