@@ -335,14 +335,9 @@ const PartnersBrowser = (props, context) => {
 
 export const NtosScipaperContent = (props, context) => {
   const { act, data } = useBackend(context);
-  const { currentTab, has_techweb } = data;
+  const { currentTab } = data;
   return (
     <>
-      {!has_techweb && (
-        <Section title="No techweb detected!" key="rewards">
-          Please sync this application to a valid techweb to upload progress!
-        </Section>
-      )}
       <Tabs key="navigation">
         <Tabs.Tab
           selected={currentTab === 1}

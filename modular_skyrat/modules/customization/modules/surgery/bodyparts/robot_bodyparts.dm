@@ -1,16 +1,16 @@
-/obj/item/bodypart/arm/left/robot/weak
+/obj/item/bodypart/l_arm/robot/weak
 	brute_reduction = 0
 	burn_reduction = 0
 
-/obj/item/bodypart/arm/right/robot/weak
+/obj/item/bodypart/r_arm/robot/weak
 	brute_reduction = 0
 	burn_reduction = 0
 
-/obj/item/bodypart/leg/left/robot/weak
+/obj/item/bodypart/l_leg/robot/weak
 	brute_reduction = 0
 	burn_reduction = 0
 
-/obj/item/bodypart/leg/right/robot/weak
+/obj/item/bodypart/r_leg/robot/weak
 	brute_reduction = 0
 	burn_reduction = 0
 

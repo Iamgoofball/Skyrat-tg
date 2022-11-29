@@ -2021,7 +2021,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/syndicate/cruiser/hallway)
 "QU" = (
-/obj/structure/mop_bucket/janitorialcart{
+/obj/structure/janitorialcart{
 	dir = 4
 	},
 /obj/item/reagent_containers/cup/bucket,

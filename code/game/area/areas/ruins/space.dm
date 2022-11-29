@@ -86,6 +86,12 @@
 	name = "\improper Hotel Pool Room"
 	icon_state = "fitness"
 
+// SKYRAT ADDITION: Start
+/area/ruin/space/has_grav/hotel/sauna
+	name = "Hotel Sauna Room"
+	icon_state = "sauna"
+// SKYRAT ADDITION: End
+
 /area/ruin/space/has_grav/hotel/bar
 	name = "\improper Hotel Bar"
 
@@ -105,6 +111,10 @@
 /area/ruin/space/has_grav/hotel/workroom
 	name = "\improper Hotel Staff Room"
 
+// SKYRAT EDIT ADDITION START
+/area/ruin/space/has_grav/hotel/workroom/quarters
+	name = "Hotel Staff Quarters"
+// SKYRAT EDIT ADDITION END
 /area/ruin/space/has_grav/hotel/storeroom
 	name = "\improper Hotel Staff Storage"
 

@@ -4,14 +4,14 @@
 /obj/item/bodypart/chest/golem
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/arm/left/golem
+/obj/item/bodypart/l_arm/golem
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/arm/right/golem
+/obj/item/bodypart/r_arm/golem
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/leg/left/golem
+/obj/item/bodypart/l_leg/golem
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/leg/right/golem
+/obj/item/bodypart/r_leg/golem
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC

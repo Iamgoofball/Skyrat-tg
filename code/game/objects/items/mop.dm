@@ -20,17 +20,13 @@
 	var/mopspeed = 1.5 SECONDS
 	force_string = "robust... against germs"
 	var/insertable = TRUE
-	var/static/list/clean_blacklist = typecacheof(list(
-		/obj/item/reagent_containers/cup/bucket,
-		/obj/structure/mop_bucket,
-	))
 
 /obj/item/mop/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/cleaner, mopspeed, pre_clean_callback=CALLBACK(src, PROC_REF(should_clean)), on_cleaned_callback=CALLBACK(src, PROC_REF(apply_reagents)))
+	AddComponent(/datum/component/cleaner, mopspeed, pre_clean_callback=CALLBACK(src, .proc/should_clean), on_cleaned_callback=CALLBACK(src, .proc/apply_reagents))
 	create_reagents(max_reagent_volume)
 	GLOB.janitor_devices += src
-	AddComponent(/datum/component/liquids_interaction, TYPE_PROC_REF(/obj/item/mop, attack_on_liquids_turf)) //SKYRAT EDIT ADDITION - Liquids
+	AddElement(/datum/element/liquids_interaction, on_interaction_callback = /obj/item/mop/.proc/attack_on_liquids_turf) //SKYRAT EDIT ADDITION - Liquids
 
 /obj/item/mop/Destroy(force)
 	GLOB.janitor_devices -= src
@@ -38,7 +34,7 @@
 
 ///Checks whether or not we should clean.
 /obj/item/mop/proc/should_clean(datum/cleaning_source, atom/atom_to_clean, mob/living/cleaner)
-	if(clean_blacklist[atom_to_clean.type])
+	if(istype(atom_to_clean, /obj/item/reagent_containers/cup/bucket) || istype(atom_to_clean, /obj/structure/janitorialcart))
 		return DO_NOT_CLEAN
 	if(reagents.total_volume < 0.1)
 		to_chat(cleaner, span_warning("Your mop is dry!"))

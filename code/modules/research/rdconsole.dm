@@ -47,14 +47,12 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/Initialize(mapload)
 	. = ..()
-	if(!CONFIG_GET(flag/no_default_techweb_link))
-		stored_research = SSresearch.science_tech
-		stored_research.consoles_accessing += src
+	stored_research = SSresearch.science_tech
+	stored_research.consoles_accessing[src] = TRUE
 
 /obj/machinery/computer/rdconsole/Destroy()
 	if(stored_research)
 		stored_research.consoles_accessing -= src
-		stored_research = null
 	if(t_disk)
 		t_disk.forceMove(get_turf(src))
 		t_disk = null
@@ -89,15 +87,9 @@ Nothing else in the console has ID requirements.
 		return
 	return ..()
 
-/obj/machinery/computer/rdconsole/multitool_act(mob/living/user, obj/item/multitool/tool)
-	. = ..()
-	if(!QDELETED(tool.buffer) && istype(tool.buffer, /datum/techweb))
-		stored_research = tool.buffer
-	return TRUE
-
 /obj/machinery/computer/rdconsole/proc/research_node(id, mob/user)
-	if(!stored_research || !stored_research.available_nodes[id] || stored_research.researched_nodes[id])
-		say("Node unlock failed: Either no techweb is found, node is already researched or is not available!")
+	if(!stored_research.available_nodes[id] || stored_research.researched_nodes[id])
+		say("Node unlock failed: Either already researched or not available!")
 		return FALSE
 	var/datum/techweb_node/TN = SSresearch.techweb_node_by_id(id)
 	if(!istype(TN))
@@ -153,17 +145,12 @@ Nothing else in the console has ID requirements.
 
 /obj/machinery/computer/rdconsole/ui_assets(mob/user)
 	return list(
-		get_asset_datum(/datum/asset/spritesheet/research_designs),
+		get_asset_datum(/datum/asset/spritesheet/research_designs)
 	)
 
 // heavy data from this proc should be moved to static data when possible
 /obj/machinery/computer/rdconsole/ui_data(mob/user)
-	var/list/data = list()
-	data["stored_research"] = !!stored_research
-	data["locked"] = locked
-	if(!stored_research) //lack of a research node is all we care about.
-		return data
-	data += list(
+	. = list(
 		"nodes" = list(),
 		"experiments" = list(),
 		"researched_designs" = stored_research.researched_designs,
@@ -173,23 +160,24 @@ Nothing else in the console has ID requirements.
 		"sec_protocols" = !(obj_flags & EMAGGED),
 		"t_disk" = null,
 		"d_disk" = null,
+		"locked" = locked
 	)
 
 	if (t_disk)
-		data["t_disk"] = list (
-			"stored_research" = t_disk.stored_research.researched_nodes,
+		.["t_disk"] = list (
+			"stored_research" = t_disk.stored_research.researched_nodes
 		)
 	if (d_disk)
-		data["d_disk"] = list (
+		.["d_disk"] = list (
 			"max_blueprints" = d_disk.max_blueprints,
-			"blueprints" = list(),
+			"blueprints" = list()
 		)
 		for (var/i in 1 to d_disk.max_blueprints)
 			if (d_disk.blueprints[i])
 				var/datum/design/D = d_disk.blueprints[i]
-				data["d_disk"]["blueprints"] += D.id
+				.["d_disk"]["blueprints"] += D.id
 			else
-				data["d_disk"]["blueprints"] += null
+				.["d_disk"]["blueprints"] += null
 
 
 	// Serialize all nodes to display
@@ -200,10 +188,10 @@ Nothing else in the console has ID requirements.
 		if (stored_research.hidden_nodes[v])
 			continue
 
-		data["nodes"] += list(list(
+		.["nodes"] += list(list(
 			"id" = n.id,
 			"can_unlock" = stored_research.can_unlock_node(n),
-			"tier" = stored_research.tiers[n.id],
+			"tier" = stored_research.tiers[n.id]
 		))
 
 	// Get experiments and serialize them
@@ -212,15 +200,14 @@ Nothing else in the console has ID requirements.
 		exp_to_process += stored_research.completed_experiments[e]
 	for (var/e in exp_to_process)
 		var/datum/experiment/ex = e
-		data["experiments"][ex.type] = list(
+		.["experiments"][ex.type] = list(
 			"name" = ex.name,
 			"description" = ex.description,
 			"tag" = ex.exp_tag,
 			"progress" = ex.check_progress(),
 			"completed" = ex.completed,
-			"performance_hint" = ex.performance_hint,
+			"performance_hint" = ex.performance_hint
 		)
-	return data
 
 /**
  * Compresses an ID to an integer representation using the id_cache, used for deduplication

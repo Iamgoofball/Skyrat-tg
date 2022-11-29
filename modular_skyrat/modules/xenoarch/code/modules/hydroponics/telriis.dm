@@ -12,7 +12,6 @@
 	growing_icon = 'modular_skyrat/modules/xenoarch/icons/growing.dmi'
 	icon_grow = "telriis-stage"
 	growthstages = 4
-	plant_icon_offset = 7
 	genes = list(/datum/plant_gene/trait/repeated_harvest)
 	reagents_add = list(/datum/reagent/medicine/higadrite = 0.1)
 

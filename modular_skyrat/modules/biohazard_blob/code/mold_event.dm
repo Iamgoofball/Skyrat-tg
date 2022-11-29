@@ -30,12 +30,12 @@
 
 	var/list/possible_spawn_areas = typecacheof(typesof(/area/station/maintenance, /area/station/security/prison, /area/station/construction))
 
-	for(var/area/A as anything in GLOB.areas)
+	for(var/area/A in world)
 		if(!is_station_level(A.z))
 			continue
 		if(!is_type_in_typecache(A, possible_spawn_areas))
 			continue
-		for(var/turf/open/floor in A.get_contained_turfs())
+		for(var/turf/open/floor in A)
 			if(!floor.Enter(resintest))
 				continue
 			if(locate(/turf/closed) in range(2, floor))

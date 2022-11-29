@@ -18,7 +18,6 @@
 					/obj/item/clothing/under/syndicate/combat = 3,
 					/obj/item/clothing/shoes/combat = 3,
 					/obj/item/clothing/mask/gas/syndicate = 3,
-					/obj/item/clothing/mask/gas/sechailer/syndicate = 3,
 					/obj/item/clothing/suit/hooded/wintercoat/syndicate = 5,
 					/obj/item/clothing/head/soft/sec/syndicate = 3,
 					/obj/item/clothing/head/beret/sec/syndicate = 3)

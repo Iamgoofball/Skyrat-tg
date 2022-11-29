@@ -201,7 +201,7 @@
 ///Surgery step for internal organs, like hearts and brains
 /datum/surgery_step/manipulate_organs/internal
 	time = 6.4 SECONDS
-	name = "manipulate organs (hemostat/organ)"
+	name = "manipulate organs"
 
 ///only operate on internal organs
 /datum/surgery_step/manipulate_organs/internal/can_use_organ(mob/user, obj/item/organ/organ)
@@ -210,7 +210,7 @@
 ///Surgery step for external organs/features, like tails, frills, wings etc
 /datum/surgery_step/manipulate_organs/external
 	time = 3.2 SECONDS
-	name = "manipulate features (hemostat/feature)"
+	name = "manipulate features"
 
 ///Only operate on external organs
 /datum/surgery_step/manipulate_organs/external/can_use_organ(mob/user, obj/item/organ/organ)

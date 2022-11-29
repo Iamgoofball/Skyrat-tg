@@ -1,4 +1,7 @@
 /obj/machinery/modular_computer/console/preset
+	// Can be changed to give devices specific hardware
+	var/_has_second_id_slot = FALSE
+	var/_has_battery = FALSE
 	///List of programs the computer starts with, given on Initialize.
 	var/list/datum/computer_file/starting_programs = list()
 
@@ -7,6 +10,11 @@
 	if(!cpu)
 		return
 
+	cpu.install_component(new /obj/item/computer_hardware/card_slot)
+	if(_has_second_id_slot)
+		cpu.install_component(new /obj/item/computer_hardware/card_slot/secondary)
+	if(_has_battery)
+		cpu.install_component(new /obj/item/computer_hardware/battery(cpu, /obj/item/stock_parts/cell/computer/super))
 	for(var/programs in starting_programs)
 		var/datum/computer_file/program/program_type = new programs
 		cpu.store_file(program_type)
@@ -27,6 +35,7 @@
 	console_department = "Research"
 	name = "research director's console"
 	desc = "A stationary computer. This one comes preloaded with research programs."
+	_has_second_id_slot = TRUE
 	starting_programs = list(
 		/datum/computer_file/program/ntnetmonitor,
 		/datum/computer_file/program/chatclient,
@@ -40,6 +49,7 @@
 	console_department = "Command"
 	name = "command console"
 	desc = "A stationary computer. This one comes preloaded with command programs."
+	_has_second_id_slot = TRUE
 	starting_programs = list(
 		/datum/computer_file/program/chatclient,
 		/datum/computer_file/program/card_mod,
@@ -50,6 +60,7 @@
 	console_department = "Identification"
 	name = "identification console"
 	desc = "A stationary computer. This one comes preloaded with identification modification programs."
+	_has_second_id_slot = TRUE
 	starting_programs = list(
 		/datum/computer_file/program/chatclient,
 		/datum/computer_file/program/card_mod,

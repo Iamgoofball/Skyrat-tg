@@ -4,14 +4,14 @@
 /obj/item/bodypart/chest/luminescent
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/arm/left/luminescent
+/obj/item/bodypart/l_arm/luminescent
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/arm/right/luminescent
+/obj/item/bodypart/r_arm/luminescent
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/leg/left/luminescent
+/obj/item/bodypart/l_leg/luminescent
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/leg/right/luminescent
+/obj/item/bodypart/r_leg/luminescent
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC

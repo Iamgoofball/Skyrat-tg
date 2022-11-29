@@ -193,7 +193,7 @@
 	owner.alpha = 0
 	in_stealth = TRUE
 	owner.visible_message(span_danger("[owner] is hit by [attack_text] in the chest!")) //We pretend to be hit, since blocking it would stop the message otherwise
-	addtimer(CALLBACK(src, PROC_REF(end_stealth), owner), stealth_time)
+	addtimer(CALLBACK(src, .proc/end_stealth, owner), stealth_time)
 	reactivearmor_cooldown = world.time + reactivearmor_cooldown_duration
 	return TRUE
 
@@ -371,13 +371,13 @@
 	if(!heads)
 		heads = typesof(/obj/item/bodypart/head)
 	if(!l_arms)
-		l_arms = typesof(/obj/item/bodypart/arm/left)
+		l_arms = typesof(/obj/item/bodypart/l_arm)
 	if(!r_arms)
-		r_arms = typesof(/obj/item/bodypart/arm/right)
+		r_arms = typesof(/obj/item/bodypart/r_arm)
 	if(!l_legs)
-		l_legs = typesof(/obj/item/bodypart/leg/left)
+		l_legs = typesof(/obj/item/bodypart/l_leg)
 	if(!r_legs)
-		r_legs = typesof(/obj/item/bodypart/leg/right)
+		r_legs = typesof(/obj/item/bodypart/r_leg)
 
 /obj/item/clothing/suit/armor/reactive/bioscrambling/cooldown_activation(mob/living/carbon/human/owner)
 	var/datum/effect_system/spark_spread/sparks = new /datum/effect_system/spark_spread

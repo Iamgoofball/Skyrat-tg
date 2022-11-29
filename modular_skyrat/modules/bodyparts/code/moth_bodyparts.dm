@@ -10,22 +10,22 @@
 	limb_id = SPECIES_MOTH
 	is_dimorphic = TRUE
 
-/obj/item/bodypart/arm/left/moth
+/obj/item/bodypart/l_arm/moth
 	icon_greyscale = BODYPART_ICON_MOTH
 	icon_state = "moth_l_arm"
 	limb_id = SPECIES_MOTH
 
-/obj/item/bodypart/arm/right/moth
+/obj/item/bodypart/r_arm/moth
 	icon_greyscale = BODYPART_ICON_MOTH
 	icon_state = "moth_r_arm"
 	limb_id = SPECIES_MOTH
 
-/obj/item/bodypart/leg/left/moth
+/obj/item/bodypart/l_leg/moth
 	icon_greyscale = BODYPART_ICON_MOTH
 	icon_state = "moth_l_leg"
 	limb_id = SPECIES_MOTH
 
-/obj/item/bodypart/leg/right/moth
+/obj/item/bodypart/r_leg/moth
 	icon_greyscale = BODYPART_ICON_MOTH
 	icon_state = "moth_r_leg"
 	limb_id = SPECIES_MOTH

@@ -25,9 +25,6 @@
 /obj/item/clothing/head/beret/science/fancy
 	greyscale_config_worn_vox = /datum/greyscale_config/beret_badge/worn/vox
 
-/obj/item/clothing/head/beret/science/rd
-	greyscale_config_worn_vox = /datum/greyscale_config/beret_badge/worn/vox
-
 /obj/item/clothing/head/beret/durathread
 	greyscale_config_worn_vox = /datum/greyscale_config/beret_badge/worn/vox
 

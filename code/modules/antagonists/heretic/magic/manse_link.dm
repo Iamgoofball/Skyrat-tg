@@ -13,7 +13,6 @@
 	invocation = "PI'RC' TH' M'ND."
 	invocation_type = INVOCATION_SHOUT
 	spell_requirements = NONE
-	antimagic_flags = MAGIC_RESISTANCE|MAGIC_RESISTANCE_MIND
 
 	cast_range = 7
 

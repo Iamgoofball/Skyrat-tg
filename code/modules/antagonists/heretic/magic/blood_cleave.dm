@@ -7,18 +7,15 @@
 	ranged_mousepointer = 'icons/effects/mouse_pointers/throw_target.dmi'
 
 	school = SCHOOL_FORBIDDEN
-	cooldown_time = 40 SECONDS
+	cooldown_time = 35 SECONDS
 
-	invocation = "CL'VE!"
+	invocation = "CL'VE"
 	invocation_type = INVOCATION_WHISPER
 	spell_requirements = NONE
 
 	cast_range = 9
-
 	/// The radius of the cleave effect
 	var/cleave_radius = 1
-	/// What type of wound we apply
-	var/wound_type = /datum/wound/slash/critical
 
 /datum/action/cooldown/spell/pointed/cleave/is_valid_target(atom/cast_on)
 	return ..() && ishuman(cast_on)
@@ -30,7 +27,7 @@
 		nearby += nearby_human
 
 	for(var/mob/living/carbon/human/victim as anything in nearby)
-		if(victim == owner || IS_HERETIC_OR_MONSTER(victim))
+		if(victim == owner)
 			continue
 		if(victim.can_block_magic())
 			victim.visible_message(
@@ -48,18 +45,17 @@
 		)
 
 		var/obj/item/bodypart/bodypart = pick(victim.bodyparts)
-		var/datum/wound/slash/crit_wound = new wound_type()
+		var/datum/wound/slash/critical/crit_wound = new()
 		crit_wound.apply_wound(bodypart)
 		victim.apply_damage(20, BURN, wound_bonus = CANT_WOUND)
 
-		new /obj/effect/temp_visual/cleave(get_turf(victim))
+		new /obj/effect/temp_visual/cleave(victim.drop_location())
 
 	return TRUE
 
 /datum/action/cooldown/spell/pointed/cleave/long
 	name = "Lesser Cleave"
-	cooldown_time = 60 SECONDS
-	wound_type = /datum/wound/slash/severe
+	cooldown_time = 65 SECONDS
 
 /obj/effect/temp_visual/cleave
 	icon = 'icons/effects/eldritch.dmi'

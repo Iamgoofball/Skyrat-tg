@@ -126,7 +126,7 @@
 	chaos_level = EVENT_CHAOS_LOW
 
 /datum/round_event_control/bureaucratic_error
-	chaos_level = EVENT_CHAOS_DISABLED
+	chaos_level = EVENT_CHAOS_LOW
 
 /datum/round_event_control/camera_failure
 	chaos_level = EVENT_CHAOS_LOW
@@ -246,7 +246,7 @@
 *	FOR SUBTYPES
 */
 
-/datum/round_event_control/pirates/nri
+/datum/round_event_control/pirates/enclave
 	chaos_level = EVENT_CHAOS_DISABLED
 
 /datum/round_event_control/pirates/dutchman

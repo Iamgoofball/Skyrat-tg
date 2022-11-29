@@ -67,7 +67,6 @@
 		trans = src.reagents.trans_to(target, amount_per_transfer_from_this, transfered_by = user)
 		to_chat(user, span_notice("You transfer [trans] unit\s of the solution."))
 		update_appearance()
-		target.update_appearance()
 
 	else
 
@@ -84,7 +83,6 @@
 		to_chat(user, span_notice("You fill [src] with [trans] unit\s of the solution."))
 
 		update_appearance()
-		target.update_appearance()
 
 /obj/item/reagent_containers/dropper/update_overlays()
 	. = ..()

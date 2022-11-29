@@ -1,6 +1,6 @@
 import { Fragment } from 'inferno';
-import { useBackend } from '../backend';
-import { Button, Section, Stack } from '../components';
+import { useBackend, useLocalState } from '../backend';
+import { Button, Input, Section, Stack } from '../components';
 import { Window } from '../layouts';
 
 type Data = {
@@ -11,12 +11,13 @@ type Data = {
 type Props = {
   title: string;
   list: string[];
-  buttonColor: string;
+  reagentName: string;
+  onReagentInput: (str: string) => void;
 };
 
 export const ChemFilterPane = (props: Props, context) => {
   const { act } = useBackend(context);
-  const { title, list, buttonColor } = props;
+  const { title, list, reagentName, onReagentInput } = props;
   const titleKey = title.toLowerCase();
 
   return (
@@ -24,16 +25,23 @@ export const ChemFilterPane = (props: Props, context) => {
       title={title}
       minHeight="240px"
       buttons={
-        <Button
-          content="Add Reagent"
-          icon="plus"
-          color={buttonColor}
-          onClick={() =>
-            act('add', {
-              which: titleKey,
-            })
-          }
-        />
+        <>
+          <Input
+            placeholder="Reagent"
+            width="140px"
+            onInput={(_, value) => onReagentInput(value)}
+          />
+          <Button
+            ml={1}
+            icon="plus"
+            onClick={() =>
+              act('add', {
+                which: titleKey,
+                name: reagentName,
+              })
+            }
+          />
+        </>
       }>
       {list.map((filter) => (
         <Fragment key={filter}>
@@ -57,16 +65,28 @@ export const ChemFilterPane = (props: Props, context) => {
 export const ChemFilter = (props, context) => {
   const { data } = useBackend<Data>(context);
   const { left = [], right = [] } = data;
+  const [leftName, setLeftName] = useLocalState(context, 'leftName', '');
+  const [rightName, setRightName] = useLocalState(context, 'rightName', '');
 
   return (
     <Window width={500} height={300}>
       <Window.Content scrollable>
         <Stack>
           <Stack.Item grow>
-            <ChemFilterPane title="Left" list={left} buttonColor="yellow" />
+            <ChemFilterPane
+              title="Left"
+              list={left}
+              reagentName={leftName}
+              onReagentInput={(value) => setLeftName(value)}
+            />
           </Stack.Item>
           <Stack.Item grow>
-            <ChemFilterPane title="Right" list={right} buttonColor="red" />
+            <ChemFilterPane
+              title="Right"
+              list={right}
+              reagentName={rightName}
+              onReagentInput={(value) => setRightName(value)}
+            />
           </Stack.Item>
         </Stack>
       </Window.Content>

@@ -1,5 +1,4 @@
 ///a reaction chamber for plumbing. pretty much everything can react, but this one keeps the reagents separated and only reacts under your given terms
-
 /obj/machinery/plumbing/reaction_chamber
 	name = "mixing chamber"
 	desc = "Keeps chemicals separated until given conditions are met."
@@ -28,8 +27,8 @@
 
 /obj/machinery/plumbing/reaction_chamber/create_reagents(max_vol, flags)
 	. = ..()
-	RegisterSignal(reagents, list(COMSIG_REAGENTS_REM_REAGENT, COMSIG_REAGENTS_DEL_REAGENT, COMSIG_REAGENTS_CLEAR_REAGENTS, COMSIG_REAGENTS_REACTED), PROC_REF(on_reagent_change))
-	RegisterSignal(reagents, COMSIG_PARENT_QDELETING, PROC_REF(on_reagents_del))
+	RegisterSignal(reagents, list(COMSIG_REAGENTS_REM_REAGENT, COMSIG_REAGENTS_DEL_REAGENT, COMSIG_REAGENTS_CLEAR_REAGENTS, COMSIG_REAGENTS_REACTED), .proc/on_reagent_change)
+	RegisterSignal(reagents, COMSIG_PARENT_QDELETING, .proc/on_reagents_del)
 
 /// Handles properly detaching signal hooks.
 /obj/machinery/plumbing/reaction_chamber/proc/on_reagents_del(datum/reagents/reagents)
@@ -85,37 +84,27 @@
 /obj/machinery/plumbing/reaction_chamber/ui_act(action, params)
 	. = ..()
 	if(.)
-		return TRUE
-
-	. = FALSE
+		return
 	switch(action)
-		if("add")
-			var/selected_reagent = tgui_input_list(usr, "Select reagent", "Reagent", GLOB.chemical_name_list)
-			if(!selected_reagent)
-				return TRUE
-
-			var/input_reagent = get_chem_id(selected_reagent)
-			if(!input_reagent)
-				return TRUE
-
-			if(!required_reagents.Find(input_reagent))
-				var/input_amount = text2num(params["amount"])
-				if(input_amount)
-					required_reagents[input_reagent] = input_amount
-
-			. = TRUE
-
 		if("remove")
 			var/reagent = get_chem_id(params["chem"])
 			if(reagent)
 				required_reagents.Remove(reagent)
-			. = TRUE
-
+				. = TRUE
+		if("add")
+			var/input_reagent = get_chem_id(params["chem"])
+			if(input_reagent && !required_reagents.Find(input_reagent))
+				var/input_amount = text2num(params["amount"])
+				if(input_amount)
+					required_reagents[input_reagent] = input_amount
+					. = TRUE
 		if("temperature")
-			var/target = text2num(params["target"])
-			if(target != null)
-				target_temperature=clamp(target, 0, 1000)
-			.=TRUE
+			var/target = params["target"]
+			if(text2num(target) != null)
+				target = text2num(target)
+				. = TRUE
+			if(.)
+				target_temperature = clamp(target, 0, 1000)
 
 ///Chemistry version of reaction chamber that allows for acid and base buffers to be used while reacting
 /obj/machinery/plumbing/reaction_chamber/chem
@@ -165,17 +154,17 @@
 	.["ph"] = round(reagents.ph, 0.01)
 	.["reagentAcidic"] = acidic_limit
 	.["reagentAlkaline"] = alkaline_limit
+	return .
 
 /obj/machinery/plumbing/reaction_chamber/chem/ui_act(action, params)
 	. = ..()
 	if (.)
 		return
-
 	switch(action)
 		if("acidic")
 			acidic_limit = round(text2num(params["target"]))
+			. = TRUE
 		if("alkaline")
 			alkaline_limit = round(text2num(params["target"]))
-
-	return TRUE
+			. = TRUE
 

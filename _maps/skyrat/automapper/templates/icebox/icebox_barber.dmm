@@ -1,12 +1,18 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"ac" = (
+"a" = (
+/turf/open/floor/iron/dark,
+/area/station/hallway/primary/central)
+"b" = (
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
+"c" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"ad" = (
+"d" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -14,10 +20,16 @@
 /obj/effect/landmark/start/barber,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"af" = (
+"e" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
+"f" = (
 /turf/closed/wall,
 /area/station/maintenance/port/greater)
-"ag" = (
+"g" = (
 /obj/structure/mirror/directional/west,
 /obj/structure/table/glass,
 /obj/item/razor{
@@ -28,7 +40,7 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"ah" = (
+"h" = (
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -42,13 +54,14 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"ai" = (
+"i" = (
+/obj/effect/landmark/start/hangover,
 /obj/structure/railing/corner{
 	dir = 8
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-"aj" = (
+"j" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -62,7 +75,7 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"ak" = (
+"k" = (
 /obj/machinery/power/apc/auto_name/directional/south,
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
@@ -79,7 +92,7 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"al" = (
+"l" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -89,7 +102,7 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"am" = (
+"m" = (
 /obj/structure/railing/corner{
 	dir = 1
 	},
@@ -98,7 +111,7 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-"an" = (
+"n" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -116,7 +129,7 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"ao" = (
+"o" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/structure/disposalpipe/segment{
@@ -128,11 +141,11 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"ap" = (
+"p" = (
 /obj/structure/disposalpipe/segment,
 /turf/closed/wall,
 /area/station/service/barber)
-"aq" = (
+"q" = (
 /obj/machinery/airalarm/directional/north,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -142,7 +155,7 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"ar" = (
+"r" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -150,17 +163,17 @@
 /obj/machinery/holopad,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"as" = (
+"s" = (
 /obj/effect/spawner/structure/window,
 /obj/structure/curtain/cloth/fancy/mechanical{
 	id = "barbershopcurtains1"
 	},
 /turf/open/floor/plating,
 /area/station/service/barber)
-"at" = (
+"t" = (
 /turf/open/openspace,
 /area/station/hallway/primary/central)
-"au" = (
+"u" = (
 /obj/item/radio/intercom/directional/west,
 /obj/structure/table/glass,
 /obj/item/reagent_containers/spray/quantum_hair_dye{
@@ -169,7 +182,7 @@
 /obj/item/lipstick/random,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"av" = (
+"v" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/tile/purple,
@@ -179,7 +192,7 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aw" = (
+"w" = (
 /obj/structure/mirror/directional/west,
 /obj/structure/table/glass,
 /obj/item/hairbrush/comb{
@@ -191,7 +204,7 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"ax" = (
+"x" = (
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -201,7 +214,7 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"ay" = (
+"y" = (
 /obj/machinery/newscaster/directional/north,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -218,7 +231,7 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"az" = (
+"z" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/purple{
@@ -227,7 +240,7 @@
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aA" = (
+"A" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
@@ -237,7 +250,7 @@
 	},
 /turf/open/floor/plating,
 /area/station/service/barber)
-"aB" = (
+"B" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -247,7 +260,7 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aC" = (
+"C" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -258,7 +271,7 @@
 /obj/item/lipstick/random,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aD" = (
+"D" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -266,7 +279,7 @@
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aE" = (
+"E" = (
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
@@ -277,7 +290,7 @@
 /obj/machinery/vending/barbervend,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aF" = (
+"F" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -286,14 +299,14 @@
 	},
 /turf/open/floor/plating,
 /area/station/service/barber)
-"aG" = (
+"G" = (
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aH" = (
+"H" = (
 /obj/machinery/light/directional/south,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -305,7 +318,7 @@
 /obj/structure/closet/secure_closet/barber,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aI" = (
+"I" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -316,7 +329,7 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aJ" = (
+"J" = (
 /obj/structure/railing{
 	dir = 8
 	},
@@ -325,7 +338,7 @@
 	},
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
-"aK" = (
+"K" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -333,7 +346,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aL" = (
+"L" = (
 /obj/structure/sign/barber{
 	pixel_x = -13
 	},
@@ -342,7 +355,11 @@
 	},
 /turf/open/floor/iron/dark,
 /area/station/hallway/primary/central)
-"aN" = (
+"M" = (
+/obj/structure/closet/firecloset,
+/turf/open/floor/plating,
+/area/station/maintenance/port/greater)
+"N" = (
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/purple,
@@ -351,7 +368,14 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aP" = (
+"O" = (
+/obj/effect/spawner/random/maintenance,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/station/maintenance/port/greater)
+"P" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -359,7 +383,7 @@
 /obj/structure/sink/directional/east,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aQ" = (
+"Q" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -368,10 +392,10 @@
 /obj/item/hairbrush,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aR" = (
+"R" = (
 /turf/closed/wall,
 /area/station/service/barber)
-"aS" = (
+"S" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk,
 /obj/effect/turf_decal/tile/purple,
@@ -386,14 +410,20 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aT" = (
+"T" = (
 /obj/effect/spawner/structure/window,
 /obj/structure/curtain/cloth/fancy/mechanical{
 	id = "barbershopcurtains"
 	},
 /turf/open/floor/plating,
 /area/station/service/barber)
-"aV" = (
+"U" = (
+/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/structure/cable,
+/turf/open/floor/iron/dark,
+/area/station/hallway/primary/central)
+"V" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -401,7 +431,7 @@
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aW" = (
+"W" = (
 /obj/machinery/firealarm/directional/north,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -411,7 +441,7 @@
 /obj/effect/landmark/start/hangover,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aX" = (
+"X" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -420,7 +450,12 @@
 /obj/structure/window,
 /turf/open/floor/iron,
 /area/station/service/barber)
-"aZ" = (
+"Y" = (
+/obj/effect/landmark/event_spawn,
+/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
+"Z" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -433,113 +468,104 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
-"lL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/station/hallway/primary/central)
-"vq" = (
-/turf/template_noop,
-/area/template_noop)
 
 (1,1,1) = {"
-af
-af
-af
-af
-af
-vq
-vq
-vq
+f
+f
+f
+f
+f
+O
+M
+f
 "}
 (2,1,1) = {"
-aR
-aw
-au
-ag
-aR
-aF
-aR
-aR
+R
+w
+u
+g
+R
+F
+R
+R
 "}
 (3,1,1) = {"
-aR
-al
-ad
-aI
-aP
-aB
-aS
-ap
+R
+l
+d
+I
+P
+B
+S
+p
 "}
 (4,1,1) = {"
-aR
-aq
-aV
-aD
-az
-ao
-aE
-aR
+R
+q
+V
+D
+z
+o
+E
+R
 "}
 (5,1,1) = {"
-aR
-ay
-ac
-aj
-aG
-aN
-aH
-aR
+R
+y
+c
+j
+G
+N
+H
+R
 "}
 (6,1,1) = {"
-aR
-aW
-ar
-aX
-aG
-av
-ak
-aR
+R
+W
+r
+X
+G
+v
+k
+R
 "}
 (7,1,1) = {"
-aR
-aQ
-aZ
-aC
-aK
-ax
-an
-aR
+R
+Q
+Z
+C
+K
+x
+n
+R
 "}
 (8,1,1) = {"
-aR
-aR
-as
-aR
-aT
-ah
-aA
-ap
+R
+R
+s
+R
+T
+h
+A
+p
 "}
 (9,1,1) = {"
-aR
-at
-at
-aL
-vq
-lL
-vq
-aR
+R
+t
+t
+L
+a
+U
+a
+R
 "}
 (10,1,1) = {"
-ai
-aJ
-aJ
-am
-vq
-vq
-vq
-vq
+i
+J
+J
+m
+b
+e
+Y
+b
 "}

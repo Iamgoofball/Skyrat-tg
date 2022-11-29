@@ -289,7 +289,8 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
 	id = "securevaultdoor";
-	name = "Vault Door"
+	name = "Vault Door";
+	network_id = null
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/vaulttango)
@@ -697,7 +698,8 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
 	id = "securevaultdoor";
-	name = "Vault Door"
+	name = "Vault Door";
+	network_id = null
 	},
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark,
@@ -710,7 +712,8 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
 	id = "securevaultdoor";
-	name = "Vault Door"
+	name = "Vault Door";
+	network_id = null
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/vaulttango)
@@ -1087,7 +1090,8 @@
 /obj/machinery/door/firedoor/heavy,
 /obj/machinery/door/poddoor{
 	id = "securevaultdoor";
-	name = "Vault Door"
+	name = "Vault Door";
+	network_id = null
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/vaulttango)
@@ -1122,6 +1126,17 @@
 /area/ruin/space/has_grav/vaulttango)
 "MJ" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/vaulttango)
+"MN" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/delivery,
+/obj/structure/mecha_wreckage/ripley/firefighter{
+	desc = "Remains of some unfortunate mecha. Completely irreparable, but perhaps something can be salvaged. This one has a strange logo on it.";
+	name = "\improper ARBORLINK Ripley MK-F wreckage"
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/vaulttango)
 "MW" = (
@@ -3007,7 +3022,7 @@ vj
 OJ
 RC
 TW
-TW
+MN
 Jm
 bF
 ai

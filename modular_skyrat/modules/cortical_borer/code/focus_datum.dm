@@ -12,15 +12,15 @@
 	for(var/trait in traits)
 		if(HAS_TRAIT(host, trait))
 			continue
-		ADD_TRAIT(host, trait, REF(borer))
+		ADD_TRAIT(host, trait, borer)
 
 /// Effects to take when the focus is removed
 /datum/borer_focus/proc/on_remove(mob/living/carbon/human/host, mob/living/basic/cortical_borer/borer)
 	SHOULD_CALL_PARENT(TRUE)
 	for(var/trait in traits)
-		if(!HAS_TRAIT_FROM(host, trait, REF(borer)))
+		if(!HAS_TRAIT_FROM(host, trait, borer))
 			continue
-		REMOVE_TRAIT(host, trait, REF(borer))
+		REMOVE_TRAIT(host, trait, borer)
 
 /datum/borer_focus/head
 	name = "head focus"

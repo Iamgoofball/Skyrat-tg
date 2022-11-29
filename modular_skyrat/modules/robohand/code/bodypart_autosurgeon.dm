@@ -86,7 +86,7 @@
 	return TRUE
 
 /obj/item/autosurgeon/bodypart/r_arm_robotic
-	starting_bodypart = /obj/item/bodypart/arm/right/robot
+	starting_bodypart = /obj/item/bodypart/r_arm/robot
 
 /obj/item/autosurgeon/bodypart/r_arm_robotic/Initialize(mapload)
 	. = ..()

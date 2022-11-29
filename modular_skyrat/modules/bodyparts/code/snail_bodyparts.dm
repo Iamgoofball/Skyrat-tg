@@ -4,14 +4,14 @@
 /obj/item/bodypart/chest/snail
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/arm/left/snail
+/obj/item/bodypart/l_arm/snail
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/arm/right/snail
+/obj/item/bodypart/r_arm/snail
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/leg/left/snail
+/obj/item/bodypart/l_leg/snail
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC
 
-/obj/item/bodypart/leg/right/snail
+/obj/item/bodypart/r_leg/snail
 	icon_greyscale = DEFAULT_BODYPART_ICON_ORGANIC

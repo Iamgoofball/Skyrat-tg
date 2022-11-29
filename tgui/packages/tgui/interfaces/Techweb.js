@@ -82,40 +82,25 @@ const abbreviateName = (name) => abbreviations[name] ?? name;
 // Actual Components
 
 export const Techweb = (props, context) => {
+  const { act, data } = useRemappedBackend(context);
+  const { locked } = data;
   return (
     <Window width={640} height={735}>
       <Window.Content scrollable>
-        <TechwebStart />
+        {!!locked && (
+          <Modal width="15em" align="center" className="Techweb__LockedModal">
+            <div>
+              <b>Console Locked</b>
+            </div>
+            <Button icon="unlock" onClick={() => act('toggleLock')}>
+              Unlock
+            </Button>
+          </Modal>
+        )}
+        <TechwebContent />
       </Window.Content>
     </Window>
   );
-};
-
-const TechwebStart = (props, context) => {
-  const { act, data } = useBackend(context);
-  const { locked, stored_research } = data;
-  if (locked) {
-    return (
-      <Modal width="15em" align="center" className="Techweb__LockedModal">
-        <div>
-          <b>Console Locked</b>
-        </div>
-        <Button icon="unlock" onClick={() => act('toggleLock')}>
-          Unlock
-        </Button>
-      </Modal>
-    );
-  }
-  if (!stored_research) {
-    return (
-      <Modal width="25em" align="center" className="Techweb__LockedModal">
-        <div>
-          <b>No research techweb found, please synchronize the console.</b>
-        </div>
-      </Modal>
-    );
-  }
-  return <TechwebContent />;
 };
 
 export const AppTechweb = (props, context) => {
@@ -124,7 +109,17 @@ export const AppTechweb = (props, context) => {
   return (
     <NtosWindow width={640} height={735}>
       <NtosWindow.Content scrollable>
-        <TechwebStart />
+        {!!locked && (
+          <Modal width="15em" align="center" className="Techweb__LockedModal">
+            <div>
+              <b>Console Locked</b>
+            </div>
+            <Button icon="unlock" onClick={() => act('toggleLock')}>
+              Unlock
+            </Button>
+          </Modal>
+        )}
+        <TechwebContent />
       </NtosWindow.Content>
     </NtosWindow>
   );

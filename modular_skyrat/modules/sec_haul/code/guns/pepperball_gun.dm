@@ -10,6 +10,9 @@
 	rack_sound = 'sound/weapons/gun/pistol/rack.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
+	realistic = TRUE
+	dirt_modifier = 2
+	emp_damageable = TRUE
 	fire_sound_volume = 50
 	company_flag = COMPANY_BOLT
 
@@ -67,7 +70,7 @@
 /obj/item/ammo_box/advanced/pepperballs
 	name = "pepperball ammo box"
 	icon = 'modular_skyrat/modules/sec_haul/icons/guns/ammoboxes.dmi'
-	icon_state = "box10x24-15"
+	icon_state = "box10x24"
 	ammo_type = /obj/item/ammo_casing/pepperball
 	custom_materials = list(/datum/material/iron = 5000)
 	max_ammo = 15

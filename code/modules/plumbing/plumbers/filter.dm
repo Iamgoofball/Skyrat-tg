@@ -37,24 +37,20 @@
 	. = TRUE
 	switch(action)
 		if("add")
-			var/which = params["which"]
-			var/selected_reagent = tgui_input_list(usr, "Select [which] reagent", "Reagent", GLOB.chemical_name_list)
-			if(!selected_reagent)
-				return TRUE
-				
-			var/chem_id = get_chem_id(selected_reagent)
-			if(!chem_id)
-				return TRUE
-				
-			switch(which)
-				if("left")
-					if(!left.Find(chem_id))
-						english_left += selected_reagent
-						left += chem_id
-				if("right")
-					if(!right.Find(chem_id))
-						english_right += selected_reagent
-						right += chem_id
+			var/new_chem_name = params["name"]
+			var/chem_id = get_chem_id(new_chem_name)
+			if(chem_id)
+				switch(params["which"])
+					if("left")
+						if(!left.Find(chem_id))
+							english_left += new_chem_name
+							left += chem_id
+					if("right")
+						if(!right.Find(chem_id))
+							english_right += new_chem_name
+							right += chem_id
+			else
+				to_chat(usr, span_warning("No such known reagent exists!"))
 
 		if("remove")
 			var/chem_name = params["reagent"]

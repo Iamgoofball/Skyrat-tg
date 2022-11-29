@@ -13,6 +13,12 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/station/hallway/primary/central)
+"cj" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
 "cL" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -57,6 +63,15 @@
 	},
 /turf/open/floor/iron,
 /area/station/service/barber)
+"eM" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
 "fe" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -79,15 +94,28 @@
 /obj/structure/table/wood,
 /turf/open/floor/iron,
 /area/station/service/barber)
+"hE" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/status_display/evac/directional/north,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
 "jh" = (
 /turf/closed/wall,
 /area/station/service/barber)
 "li" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/status_display/evac/directional/north,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/station/hallway/primary/central)
 "lT" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -528,7 +556,7 @@ nY
 zo
 pl
 jh
-li
+eM
 "}
 (3,1,1) = {"
 jh
@@ -537,7 +565,7 @@ mX
 MG
 Hb
 KV
-li
+eM
 "}
 (4,1,1) = {"
 KV
@@ -609,7 +637,7 @@ AP
 GR
 lT
 Vw
-li
+cj
 "}
 (12,1,1) = {"
 DC
@@ -618,7 +646,7 @@ ZP
 Kg
 Hn
 Vw
-li
+cj
 "}
 (13,1,1) = {"
 IL
@@ -627,5 +655,5 @@ IL
 IL
 IL
 IL
-li
+hE
 "}

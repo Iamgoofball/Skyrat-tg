@@ -14,6 +14,9 @@
 /obj/item/clothing/mask/gas/sechailer/swat/spacepol
 	supports_variations_flags = CLOTHING_SNOUTED_VARIATION_NO_NEW_ICON
 
+/obj/item/clothing/mask/void_mask
+	supports_variations_flags = CLOTHING_SNOUTED_VARIATION_NO_NEW_ICON
+
 /obj/item/clothing/mask/changeling
 	supports_variations_flags = CLOTHING_SNOUTED_VARIATION_NO_NEW_ICON
 

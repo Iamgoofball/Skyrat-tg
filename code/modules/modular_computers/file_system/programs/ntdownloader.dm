@@ -125,8 +125,12 @@
 	return FALSE
 
 /datum/computer_file/program/ntnetdownload/ui_data(mob/user)
+	if(!istype(computer))
+		return
+	var/obj/item/computer_hardware/card_slot/card_slot = computer.all_components[MC_CARD]
+	var/list/access = card_slot?.GetAccess()
+
 	var/list/data = get_header_data()
-	var/list/access = computer.GetAccess()
 
 	data["downloading"] = !!downloaded_file
 	data["error"] = downloaderror || FALSE
@@ -169,7 +173,7 @@
 /datum/computer_file/program/ntnetdownload/proc/check_compatibility(datum/computer_file/program/P)
 	var/hardflag = computer.hardware_flag
 
-	if(P?.is_supported_by_hardware(hardware_flag = hardflag, loud = FALSE))
+	if(P?.is_supported_by_hardware(hardflag,0))
 		return TRUE
 	return FALSE
 

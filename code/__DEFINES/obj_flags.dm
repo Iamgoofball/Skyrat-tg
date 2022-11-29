@@ -65,8 +65,11 @@
 #define CASTING_CLOTHES (1<<19)
 ///Moths can't eat the clothing that has this flag.
 #define INEDIBLE_CLOTHING (1<<20)
-/// Headgear/helmet allows internals
-#define HEADINTERNALS (1<<21)
+
+//SKYRAT DEFINE
+/// Allows for masks to use tanks on adjacentadjecent tiles.
+#define MASK_EXTEND_RANGE (1<<21)
+//SKYRAT DEFINE END
 
 /// Integrity defines for clothing (not flags but close enough)
 #define CLOTHING_PRISTINE 0 // We have no damage on the clothing

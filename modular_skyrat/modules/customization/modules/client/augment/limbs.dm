@@ -50,12 +50,12 @@
 
 /datum/augment_item/limb/l_arm/prosthetic
 	name = "Prosthetic"
-	path = /obj/item/bodypart/arm/left/robot/surplus
+	path = /obj/item/bodypart/l_arm/robot/surplus
 	cost = -1
 
 /datum/augment_item/limb/l_arm/cyborg
 	name = "Cyborg"
-	path = /obj/item/bodypart/arm/left/robot/weak
+	path = /obj/item/bodypart/l_arm/robot/weak
 
 //RIGHT ARMS
 /datum/augment_item/limb/r_arm
@@ -63,12 +63,12 @@
 
 /datum/augment_item/limb/r_arm/prosthetic
 	name = "Prosthetic"
-	path = /obj/item/bodypart/arm/right/robot/surplus
+	path = /obj/item/bodypart/r_arm/robot/surplus
 	cost = -1
 
 /datum/augment_item/limb/r_arm/cyborg
 	name = "Cyborg"
-	path = /obj/item/bodypart/arm/right/robot/weak
+	path = /obj/item/bodypart/r_arm/robot/weak
 
 //LEFT LEGS
 /datum/augment_item/limb/l_leg
@@ -76,12 +76,12 @@
 
 /datum/augment_item/limb/l_leg/prosthetic
 	name = "Prosthetic"
-	path = /obj/item/bodypart/leg/left/robot/surplus
+	path = /obj/item/bodypart/l_leg/robot/surplus
 	cost = -1
 
 /datum/augment_item/limb/l_leg/cyborg
 	name = "Cyborg"
-	path = /obj/item/bodypart/leg/left/robot/weak
+	path = /obj/item/bodypart/l_leg/robot/weak
 
 //RIGHT LEGS
 /datum/augment_item/limb/r_leg
@@ -89,9 +89,9 @@
 
 /datum/augment_item/limb/r_leg/prosthetic
 	name = "Prosthetic"
-	path = /obj/item/bodypart/leg/right/robot/surplus
+	path = /obj/item/bodypart/r_leg/robot/surplus
 	cost = -1
 
 /datum/augment_item/limb/r_leg/cyborg
 	name = "Cyborg"
-	path = /obj/item/bodypart/leg/right/robot/weak
+	path = /obj/item/bodypart/r_leg/robot/weak

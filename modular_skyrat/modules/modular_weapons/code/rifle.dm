@@ -137,6 +137,7 @@
 	has_gun_safety = FALSE
 	w_class = WEIGHT_CLASS_BULKY
 	company_flag = COMPANY_CANTALAN
+	dirt_modifier = 0.25
 
 /obj/item/gun/ballistic/automatic/cfa_rifle/Initialize(mapload)
 	. = ..()

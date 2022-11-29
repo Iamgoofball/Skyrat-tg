@@ -74,7 +74,9 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	if(.)
 		return
 
-	var/obj/item/card/id/user_id = computer.computer_id_slot
+	var/obj/item/computer_hardware/card_slot/card_slot = computer.all_components[MC_CARD]
+	var/obj/item/card/id/user_id = card_slot?.stored_card
+
 	if(!user_id || !(ACCESS_CHANGE_IDS in user_id.access))
 		return
 
@@ -126,19 +128,18 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 	var/list/data = get_header_data()
 
 	var/authed = FALSE
-	var/obj/item/card/id/user_id = computer.computer_id_slot
+	var/obj/item/computer_hardware/card_slot/card_slot = computer.all_components[MC_CARD]
+	var/obj/item/card/id/user_id = card_slot?.stored_card
 	if(user_id && (ACCESS_CHANGE_IDS in user_id.access))
 		authed = TRUE
 
 	data["authed"] = authed
 
 	var/list/pos = list()
-	var/list/priority = list()
-	for(var/datum/job/job as anything in SSjob.joinable_occupations)
+	for(var/j in SSjob.joinable_occupations)
+		var/datum/job/job = j
 		if(job.title in blacklisted)
 			continue
-		if(job in SSjob.prioritized_jobs)
-			priority += job.title
 
 		pos += list(list(
 			"title" = job.title,
@@ -148,8 +149,12 @@ GLOBAL_VAR_INIT(time_last_changed_position, 0)
 			"status_close" = authed ? can_close_job(job) : FALSE,
 		))
 	data["slots"] = pos
-	data["prioritized"] = priority
 	var/delta = round(change_position_cooldown - ((world.time / 10) - GLOB.time_last_changed_position), 1)
 	data["cooldown"] = delta < 0 ? 0 : delta
+	var/list/priority = list()
+	for(var/j in SSjob.prioritized_jobs)
+		var/datum/job/job = j
+		priority += job.title
+	data["prioritized"] = priority
 	return data
 

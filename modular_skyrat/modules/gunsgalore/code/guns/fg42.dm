@@ -18,6 +18,7 @@
 	worn_icon_state = "fg42"
 	fire_sound = 'modular_skyrat/modules/gunsgalore/sound/guns/fire/fg42_fire.ogg'
 	alt_icons = TRUE
+	realistic = TRUE
 	rack_sound = 'modular_skyrat/modules/gunsgalore/sound/guns/interact/batrifle_cock.ogg'
 	load_sound = 'modular_skyrat/modules/gunsgalore/sound/guns/interact/batrifle_magin.ogg'
 	load_empty_sound = 'modular_skyrat/modules/gunsgalore/sound/guns/interact/batrifle_magin.ogg'

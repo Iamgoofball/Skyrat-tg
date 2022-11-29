@@ -21,6 +21,8 @@
 	mag_type = /obj/item/ammo_box/magazine/mg34
 	can_suppress = FALSE
 	fire_delay = 1
+	realistic = TRUE
+	dirt_modifier = 0.1
 	bolt_type = BOLT_TYPE_OPEN
 	show_bolt_icon = FALSE
 	tac_reloads = FALSE
@@ -83,6 +85,8 @@
 	fire_delay = 0.04
 	burst_size = 5
 	spread = 5
+	dirt_modifier = 0
+	durability = 500
 	mag_type = /obj/item/ammo_box/magazine/mg34/packapunch
 
 /obj/item/ammo_box/magazine/mg34/packapunch
@@ -97,7 +101,7 @@
 #define SPREAD_UNDEPLOYED 17
 #define SPREAD_DEPLOYED 6
 #define HEAT_PER_SHOT 1.5
-#define TIME_TO_COOLDOWN (20 SECONDS)
+#define TIME_TO_COOLDOWN 20 SECONDS
 #define BARREL_COOLDOWN_RATE 2
 
 /obj/item/gun/ballistic/automatic/mg34/mg42
@@ -121,7 +125,7 @@
 
 /obj/item/gun/ballistic/automatic/mg34/mg42/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_GUN_FIRED, PROC_REF(process_heat))
+	RegisterSignal(src, COMSIG_GUN_FIRED, .proc/process_heat)
 	START_PROCESSING(SSobj, src)
 
 /obj/item/gun/ballistic/automatic/mg34/mg42/process(delta_time)
@@ -151,23 +155,23 @@
 
 /obj/item/gun/ballistic/automatic/mg34/mg42/pickup(mob/user)
 	. = ..()
-	RegisterSignal(user, COMSIG_LIVING_UPDATED_RESTING, PROC_REF(deploy_bipod))
+	RegisterSignal(user, COMSIG_LIVING_UPDATED_RESTING, .proc/deploy_bipod)
 
 /obj/item/gun/ballistic/automatic/mg34/mg42/dropped(mob/user)
 	. = ..()
 	UnregisterSignal(user, COMSIG_LIVING_UPDATED_RESTING)
 	bipod_deployed = FALSE
-	spread = SPREAD_UNDEPLOYED
+	base_spread = SPREAD_UNDEPLOYED
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/mg34/mg42/proc/deploy_bipod(datum/datum_source, resting)
 	SIGNAL_HANDLER
 	if(resting)
 		bipod_deployed = TRUE
-		spread = SPREAD_DEPLOYED
+		base_spread = SPREAD_DEPLOYED
 	else
 		bipod_deployed = FALSE
-		spread = SPREAD_UNDEPLOYED
+		base_spread = SPREAD_UNDEPLOYED
 	playsound(src, 'modular_skyrat/modules/gunsgalore/sound/guns/fire/mg42_bipod.ogg', 100)
 	balloon_alert_to_viewers("bipod [bipod_deployed ? "deployed" : "undeployed"]!")
 	update_appearance()
@@ -180,7 +184,7 @@
 	if(barrel_heat >= 100)
 		overheated = TRUE
 		playsound(src, 'modular_skyrat/modules/gunsgalore/sound/guns/fire/mg_overheat.ogg', 100)
-		addtimer(CALLBACK(src, PROC_REF(reset_overheat)), TIME_TO_COOLDOWN)
+		addtimer(CALLBACK(src, .proc/reset_overheat), TIME_TO_COOLDOWN)
 	update_appearance()
 
 /obj/item/gun/ballistic/automatic/mg34/mg42/proc/reset_overheat()

@@ -92,9 +92,6 @@
 /obj/item/clothing/head/beret/science/fancy
 	greyscale_config_worn_teshari = /datum/greyscale_config/beret_badge/worn/teshari
 
-/obj/item/clothing/head/beret/science/rd
-	greyscale_config_worn_teshari = /datum/greyscale_config/beret_badge/worn/teshari
-
 /obj/item/clothing/head/beret/durathread
 	greyscale_config_worn_teshari = /datum/greyscale_config/beret_badge/worn/teshari
 
@@ -142,9 +139,3 @@
 
 /obj/item/clothing/neck/ranger_poncho
 	greyscale_config_worn_teshari = /datum/greyscale_config/ranger_poncho/worn/teshari
-
-/obj/item/clothing/under/dress/skirt/plaid
-	greyscale_config_worn_teshari = /datum/greyscale_config/plaidskirt_worn/teshari
-
-/obj/item/clothing/under/dress/sundress
-	greyscale_config_worn_teshari = /datum/greyscale_config/sundress_worn/teshari

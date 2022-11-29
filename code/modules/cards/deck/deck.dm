@@ -33,8 +33,8 @@
 /obj/item/toy/cards/deck/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/drag_pickup)
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
 	AddComponent(/datum/component/two_handed, attacksound='sound/items/cardflip.ogg')
 	register_context()
 
@@ -42,14 +42,14 @@
 		return
 
 	// generate a normal playing card deck
-	initial_cards += "Joker Clown"
-	initial_cards += "Joker Mime"
+	cards += new /obj/item/toy/singlecard(src, "Joker Clown", src)
+	cards += new /obj/item/toy/singlecard(src, "Joker Mime", src)
 	for(var/suit in list("Hearts", "Spades", "Clubs", "Diamonds"))
-		initial_cards += "Ace of [suit]"
+		cards += new /obj/item/toy/singlecard(src, "Ace of [suit]", src)
 		for(var/i in 2 to 10)
-			initial_cards += "[i] of [suit]"
+			cards += new /obj/item/toy/singlecard(src, "[i] of [suit]", src)
 		for(var/person in list("Jack", "Queen", "King"))
-			initial_cards += "[person] of [suit]"
+			cards += new /obj/item/toy/singlecard(src, "[person] of [suit]", src)
 
 /// triggered on wield of two handed item
 /obj/item/toy/cards/deck/proc/on_wield(obj/item/source, mob/user)
@@ -71,17 +71,13 @@
 /obj/item/toy/cards/deck/examine(mob/user)
 	. = ..()
 
-	if(HAS_TRAIT(user, TRAIT_XRAY_VISION) && count_cards() > 0)
-		. += span_notice("You scan the deck with your x-ray vision and the top card reads: [fetch_card_atoms()[1].cardname].")
-
-	// This can only happen if card_atoms have been generated
-	if(LAZYLEN(card_atoms) > 0)
-		var/obj/item/toy/singlecard/card = fetch_card_atoms()[1]
-
+	if(cards.len > 0)
+		var/obj/item/toy/singlecard/card = cards[1]
+		if(HAS_TRAIT(user, TRAIT_XRAY_VISION))
+			. += span_notice("You scan the deck with your x-ray vision and the top card reads: [card.cardname].")
 		var/marked_color = card.getMarkedColor(user)
 		if(marked_color)
 			. += span_notice("The top card of the deck has a [marked_color] mark on the corner!")
-
 	. += span_notice("Click and drag the deck to yourself to pickup.") // This should be a context screentip
 
 /obj/item/toy/cards/deck/add_context(atom/source, list/context, obj/item/held_item, mob/living/user)
@@ -117,10 +113,10 @@
 	if(!COOLDOWN_FINISHED(src, shuffle_cooldown))
 		return
 	COOLDOWN_START(src, shuffle_cooldown, shuffle_time)
-	shuffle_inplace(fetch_card_atoms())
+	cards = shuffle(cards)
 	playsound(src, 'sound/items/cardshuffle.ogg', 50, TRUE)
 	user.balloon_alert_to_viewers("shuffles the deck")
-	addtimer(CALLBACK(src, PROC_REF(CardgameEvent), user), 60 SECONDS, TIMER_OVERRIDE|TIMER_UNIQUE)
+	addtimer(CALLBACK(src, .proc/CardgameEvent, user), 60 SECONDS, TIMER_OVERRIDE|TIMER_UNIQUE)
 
 /// This checks if nearby mobs are playing a cardgame and triggers a mood and memory
 /obj/item/toy/cards/deck/proc/CardgameEvent(mob/living/dealer)
@@ -176,7 +172,7 @@
 	return ..()
 
 /obj/item/toy/cards/deck/update_icon_state()
-	switch(count_cards())
+	switch(cards.len)
 		if(27 to INFINITY)
 			icon_state = "deck_[deckstyle]_full"
 		if(11 to 27)
@@ -194,7 +190,7 @@
 		card.Flip(CARD_FACEDOWN)
 	if(istype(card_item, /obj/item/toy/cards/cardhand))
 		var/obj/item/toy/cards/cardhand/cardhand = card_item
-		for(var/obj/item/toy/singlecard/card in cardhand.fetch_card_atoms())
+		for(var/obj/item/toy/singlecard/card in cardhand.cards)
 			card.Flip(CARD_FACEDOWN)
 	. = ..()
 

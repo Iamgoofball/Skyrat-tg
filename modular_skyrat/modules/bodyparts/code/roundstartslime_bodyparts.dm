@@ -10,18 +10,18 @@
 	is_dimorphic = TRUE
 	icon_greyscale = BODYPART_ICON_ROUNDSTARTSLIME
 
-/obj/item/bodypart/arm/left/roundstartslime
+/obj/item/bodypart/l_arm/roundstartslime
 	limb_id = SPECIES_SLIMEPERSON
 	icon_greyscale = BODYPART_ICON_ROUNDSTARTSLIME
 
-/obj/item/bodypart/arm/right/roundstartslime
+/obj/item/bodypart/r_arm/roundstartslime
 	limb_id = SPECIES_SLIMEPERSON
 	icon_greyscale = BODYPART_ICON_ROUNDSTARTSLIME
 
-/obj/item/bodypart/leg/left/roundstartslime
+/obj/item/bodypart/l_leg/roundstartslime
 	limb_id = SPECIES_SLIMEPERSON
 	icon_greyscale = BODYPART_ICON_ROUNDSTARTSLIME
 
-/obj/item/bodypart/leg/right/roundstartslime
+/obj/item/bodypart/r_leg/roundstartslime
 	limb_id = SPECIES_SLIMEPERSON
 	icon_greyscale = BODYPART_ICON_ROUNDSTARTSLIME

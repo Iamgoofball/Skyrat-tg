@@ -18,8 +18,6 @@
 	var/command_report_title
 	/// Whether the report's contents are announced.
 	var/announce_contents = TRUE
-	/// Custom report sound.
-	var/report_sound = null
 	/// The error we encountered while trying to send a report.
 	var/error = ""
 
@@ -69,9 +67,8 @@
 /obj/machinery/computer/centcom_announcement/proc/send_announcement()
 	if (!COOLDOWN_FINISHED(src, announcement_cooldown))
 		return
-
-	if(!report_sound)
-		report_sound = SSstation.announcer.get_rand_report_sound()
+	/// The sound we're going to play on report.
+	var/report_sound = SSstation.announcer.get_rand_report_sound()
 
 	if(announce_contents)
 		priority_announce(command_report_content, command_report_title, report_sound, sender_override = command_name, has_important_message = TRUE)

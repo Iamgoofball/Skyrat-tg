@@ -13,11 +13,11 @@
 	. = ..()
 	for(var/suit in list("Hearts", "Pikes", "Clovers", "Tiles"))
 		for(var/i in 1 to 10)
-			initial_cards += "[i] of [suit]"
+			cards += new /obj/item/toy/singlecard(src, "[i] of [suit]", src)
 		for(var/person in list("Valet", "Chevalier", "Dame", "Roi"))
-			initial_cards += "[person] of [suit]"
+			cards += new /obj/item/toy/singlecard(src, "[person] of [suit]", src)
 	for(var/trump in list("The Magician", "The High Priestess", "The Empress", "The Emperor", "The Hierophant", "The Lover", "The Chariot", "Justice", "The Hermit", "The Wheel of Fortune", "Strength", "The Hanged Man", "Death", "Temperance", "The Devil", "The Tower", "The Star", "The Moon", "The Sun", "Judgement", "The World", "The Fool"))
-		initial_cards += trump
+		cards += new /obj/item/toy/singlecard(src, trump, src)
 
 /obj/item/toy/cards/deck/tarot/draw(mob/user)
 	. = ..()
