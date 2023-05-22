@@ -47,6 +47,9 @@ SUBSYSTEM_DEF(tts)
 	/// For tts messages which time out, it won't keep tracking the tts message and will just assume that the message took
 	/// 7 seconds (or whatever the value of message_timeout is) to receive back a response.
 	var/average_tts_messages_time = 0
+	
+	var/timeouts = 0
+	var/errors = 0
 
 /datum/controller/subsystem/tts/vv_edit_var(var_name, var_value)
 	// tts being enabled depends on whether it actually exists
@@ -55,7 +58,7 @@ SUBSYSTEM_DEF(tts)
 	return ..()
 
 /datum/controller/subsystem/tts/stat_entry(msg)
-	msg = "Active:[length(in_process_tts_messages)]|Standby:[length(queued_tts_messages.L)]|Avg:[average_tts_messages_time]"
+	msg = "Active:[length(in_process_tts_messages)]|Standby:[length(queued_tts_messages.L)]|Avg:[average_tts_messages_time]|Errors:[errors]|Timeouts:[timeouts]|Failed:[errors+timeouts]"
 	return ..()
 
 /proc/cmp_word_length_asc(list/a, list/b)
@@ -158,6 +161,10 @@ SUBSYSTEM_DEF(tts)
 		var/identifier = current_message[IDENTIFIER_INDEX]
 		cached_voices -= identifier
 		if(response.errored || timeout_time < world.time)
+			if(response.errored)
+				errors++
+			else if(timeout_time < world.time)
+				timeouts++
 			continue
 
 		var/sound/new_sound = new("tmp/tts/[identifier].ogg")
