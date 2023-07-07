@@ -29,6 +29,8 @@
 	if(isalien(user))
 		return 'sound/voice/hiss6.ogg'
 	if(ishuman(user))
+		if(prob(1))
+			return 'sound/voice/human/wilhelm_scream.ogg'
 		var/mob/living/carbon/human/H = user
 		if(isnull(H.selected_scream)) //For things that don't have a selected scream(npcs)
 			var/datum/species/userspecies = H.dna.species
